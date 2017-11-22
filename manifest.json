@@ -1,0 +1,67 @@
+{
+    "name": "Facebook privacy watcher.",
+    "version" : "1.0",
+    "description": "Facebook privacy watcher.",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "js/classes/serverLayout.js",
+            "js/global/jquery.min.js",
+            "js/classes/cookies.js",
+            "js/classes/theCollector.js",
+            "js/classes/activityLog.js",
+            "js/classes/settings.js",
+            "js/global/generalFunctions.js",
+            "js/enum/anonUser.js",
+            "js/enum/gender.js",
+            "js/enum/message.js",
+            "js/enum/user.js",
+            "js/global/sjcl.js",
+            "js/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*.facebook.com/*", "https://*.facebook.com/*", "http://localhost/*", "https://ask.fm/"],
+            "css": ["css/fblayer.css","css/introjs.css","js/global/css/jquery.json-viewer.css"],
+            "js": [
+                "js/global/sjcl.js",
+                "js/classes/serverLayout.js",
+                "js/global/jquery.min.js",
+                "js/global/generalFunctions.js",
+                "js/enum/anonUser.js",
+                "js/enum/gender.js",
+                "js/enum/message.js",
+                "js/enum/user.js",
+                "js/global/jquery.scrollstop.min.js",
+                "js/global/moment.js",
+                "js/global/data-selfie.js",
+                "js/global/intro.js",
+                "js/global/jquery.json-viewer.js",
+                "js/global/jquery.json-viewer.execute.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "cookies",
+        "activeTab",
+        "geolocation",
+        "webRequest",
+        "management",
+        "tabs",
+        "https://ajax.googleapis.com/",
+        "http://*.facebook.com/",
+        "https://*.facebook.com/",
+        "https://fba.ppu.edu/",
+        "http://localhost/*"
+    ],
+    "manifest_version": 2,
+    "web_accessible_resources": [ "js/*"  ]
+}
