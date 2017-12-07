@@ -80,6 +80,7 @@ function makeUser(id, friends, pages, groups, gender, country, language, DoB, ab
  * @param {function} fn Callback
  */
 function existUser(user, fn){
+    console.log(user);
     getSingleValue("users", function(e){
         if(e==null)
         {

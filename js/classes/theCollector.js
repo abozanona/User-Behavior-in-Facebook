@@ -6,19 +6,22 @@ function collectFriendsID(fn){
     function getNewList(startindex){
         startindex++;
         $.get("https://mbasic.facebook.com/friends/center/friends/?ppk=" + startindex, function( data ) {
-            if (data.match(/uid=\d+/g) && startindex <= 3) {
-                var friendid_array = data.match(/uid=\d+/g);
-                var mutualfriends_array = data.match(/bo bp">(.*?)<\/div><div class="bq">/g);
-                var names_array = $(data).find("a.bn");
-                // if(friendid_array.length != mutualfriends_array.length){
-                //     //fn(null);
-                //     //return;
-                // }
-                var minLen =(friendid_array.length<mutualfriends_array.length)?friendid_array.length:mutualfriends_array.length;
+            //alert(startindex);
+            if (data.match(/uid=\d+/g) && startindex<2) {
+                data = $(data).find("table").not(':first').not(':last');
+                // var friendid_array = data.match(/uid=\d+/g);
+                // var mutualfriends_array = data.match(/bo bp">(.*?)<\/div><div class="bq">/g);
+                // var names_array = $(data).find("a.bn");
+
+                var names = $(data).find("tr td:nth-child(2) a");
+                var mutualFriends = $(data).find("tr td:nth-child(2) div");
+
+                var minLen =(names.length<mutualFriends.length)?names.length:mutualFriends.length;
                 var minLen2 = minLen;
                 for (var i=0; i<minLen;i++) {
-                    var friend_id = friendid_array[i].replace("uid=", "");
-                    var mutualFriendsNumber = mutualfriends_array[i];
+                    var friend_id = $(names[i]).attr("href").match(/uid=\d+/g)[0].replace("uid=", "");
+                    var friend_name = $(names[i]).text();
+                    var mutualFriendsNumber = $(mutualFriends[i]).text();
 
                     var numRegex = /\d+/;
                     mutualFriendsNumber = mutualFriendsNumber.match(numRegex);
@@ -26,7 +29,8 @@ function collectFriendsID(fn){
                         mutualFriendsNumber=0;
                     else
                         mutualFriendsNumber=parseInt(mutualFriendsNumber);
-                    getSex($(names_array[i]).text(), function (res) {
+                    var isSex=1;
+                    getSex(friend_name, function (res) {
                         minLen2--;
                         friendsID.push({
                             "id" : friend_id,
@@ -38,7 +42,9 @@ function collectFriendsID(fn){
                         });
                         if(!minLen2)
                             getNewList(startindex);
+                        isSex = 0;
                     });
+                    console.log("hare");
                 }
             } else {
                 if(friendsID.length==0) {
@@ -47,6 +53,7 @@ function collectFriendsID(fn){
                 }
                 else{
                     fn(friendsID);
+                    console.log(friendsID);
                 }
             }
         });

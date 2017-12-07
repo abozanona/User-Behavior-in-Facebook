@@ -1,10 +1,7 @@
-//todo a page to view anonomized links
-//todo copy past the plugin documentation
-//todo add the ability of sending data to our server
-//todo fbw colorize posts,info,about and other stuff
 //todo read messages
-//for debugging only
 
+
+openJSONViewer();
 chrome.tabs.onUpdated.addListener(function (tab) {
     chrome.tabs.query({}, function(foundTabs) {
         var count = 0;
@@ -17,8 +14,6 @@ chrome.tabs.onUpdated.addListener(function (tab) {
         }
         for(var j=0;j<ids.length;j++)
             chrome.tabs.sendMessage(ids[j], { tabsCount: count });
-        if(fn)
-            fn(count);
     });
 });
 chrome.tabs.onRemoved.addListener(function (tab) {
@@ -33,8 +28,6 @@ chrome.tabs.onRemoved.addListener(function (tab) {
         }
         for(var j=0;j<ids.length;j++)
             chrome.tabs.sendMessage(ids[j], { tabsCount: count });
-        if(fn)
-            fn(count);
     });
 });
 
@@ -50,9 +43,18 @@ function checkSendingData() {
 
         var daysDifference = timestampDifference(today, time).days;
         if(daysDifference>7){
-            openJSONViewer();
+            setSingleValue("weekPeriod", today, function () {
+                openJSONViewer();
+            });
         }
     });
+
+    collectResult(function (result) {
+        submitStudyResults(result, function () {
+            ;
+        })
+    });
+
 }
 checkSendingData();
 var resetAll=1;

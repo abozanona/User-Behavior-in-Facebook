@@ -6,10 +6,37 @@ var privacy={
     custom: 3,
     unknown: 4
 };
-function checkPrivacy(privacy, fn) {
-    $.get(server + "checkprivacy.php?q=" + privacy, function (data) {
-        return data;
-    });
+function checkPrivacy(_privacy, fn) {
+    // $.get(server + "checkprivacy.php?q=" + privacy, function (data) {
+    //     return data;
+    // });
+    var privacyRes = {
+        ar: [
+            "العامة",
+            "الأصدقاء",
+            "أنا فقط",
+            "مخصصة"
+        ],
+        en: [
+            "Public",
+            "Friends",
+            "Only me",
+            "Custom"
+        ]
+    };
+    (function (_privacy) {
+        getLanguage(function (lang) {
+            if(lang && privacyRes[lang]){
+                for(var i=0;i<4;i++)
+                    if(privacyRes[lang][i] == _privacy){
+                        fn(i);
+                    }
+            }
+            else{
+                //console.log("privacy", "Language not supported");
+            }
+        });
+    })(_privacy);
 }
 function getPrivacyColor(privacy, fn) {
     checkPrivacy(privacy, function (res) {
@@ -68,12 +95,26 @@ function submitStudyResults(results, fn) {
     });
 }
 
-//todo check if is working
+function dataFromGenderURL(name, fn){
+    $.get("https://gender-api.com/get?split=" + name, function (data) {
+        if(data.indexOf("female"))
+            fn(GENDER.FEMALE);
+        else if(data.indexOf("male"))
+            fn(GENDER.FEMALE);
+        else
+            fn(GENDER.UNKNOWN);
+    });
+}
+
 function getSex(name, fn) {
+    if(!name){
+        fn(GENDER.UNKNOWN);
+        return;
+    }
     getSingleValue("names", function (e) {
-        if(!e){
+        if(!e || !e.length){
             e = [];
-            $.get(server + "sex.php?q=" + name, function (data) {
+            $.get(server + "sex.php?name=" + name, function (data) {
                 if(data == 1){
                     fn(GENDER.MALE);
                     e.push({
@@ -101,12 +142,12 @@ function getSex(name, fn) {
             });
             return;
         }
-        else if(getElementFromArray(name, e)){
-            fn(getElementFromArray(name, e).value);
+        else if(getElementKeyValueInArray("key", name, e)){
+            fn(getElementKeyValueInArray("key", name, e).value);
             return;
         }
         else{
-            $.get(server + "sex.php?q=" + name, function (data) {
+            $.get(server + "sex.php?name=" + name, function (data) {
                 if(data == 1){
                     fn(GENDER.MALE);
                     e.push({

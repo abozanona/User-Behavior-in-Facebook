@@ -110,7 +110,7 @@ function startTutorial(step) {
                     position: 'right'
                 },
                 {
-                    intro: "Manage your Relationships info fro here",
+                    intro: "Manage your Relationships info from here",
                     element: document.querySelector('li[testid="nav_all_relationships"]'),
                     position: 'right'
                 },
@@ -125,7 +125,7 @@ function startTutorial(step) {
                     position: 'right'
                 },
                 {
-                    intro: "Remember to always choose toe correct audience for your personal information",
+                    intro: "Remember to always choose to correct audience for your personal information",
                     element: document.querySelector('#pagelet_timeline_medley_about'),
                     position: 'right'
                 },
@@ -162,7 +162,7 @@ function startTutorial(step) {
                     element: document.querySelector('#sideNav')
                 },
                 {
-                    intro: "You can use this tab to pla pla pla",
+                    intro: "You can use this check your Security and Login settings",
                     element: document.querySelector('#navItem_security')
                 },
                 {
@@ -170,7 +170,7 @@ function startTutorial(step) {
                     element: document.querySelector('#navItem_privacy')
                 },
                 {
-                    intro: "Control taging privacy from here",
+                    intro: "Control tagging privacy from here",
                     element: document.querySelector('#navItem_timeline')
                 },
                 {
@@ -414,13 +414,23 @@ var looked = {
             $(posts).each(function (index) {
                 (function (e) {
                     var privacy=undefined;
-                    if($(e).find(".fbStreamPrivacy"))
-                        privacy = $(e).find(".fbStreamPrivacy").attr("data-tooltip-content");
-                    else if($(e).find("._6a._29ee._4f-9._43_1"))
-                        privacy = $(e).find("._6a._29ee._4f-9._43_1").attr("data-tooltip-content");
-                    getPrivacyColor(privacy, function (color) {
-                        $(e).css("background-color",color);
-                    })
+                    // if($(e).find(".fbStreamPrivacy"))
+                    //     privacy = $(e).find(".fbStreamPrivacy").attr("data-tooltip-content");
+                    // else if($(e).find("._6a._29ee._4f-9._43_1"))
+                    //     privacy = $(e).find("._6a._29ee._4f-9._43_1").attr("data-tooltip-content");
+                    //FIX very time consuming
+                    //todo very time consuming, not usable.
+                    var isPrivacyFound = false;
+                    $(e).find("a[data-tooltip-content]").each(function (index) {
+                        if(!isPrivacyFound || 1) {
+                            privacy = $(this).attr("data-tooltip-content");
+                            getPrivacyColor(privacy, function (color) {
+                                isPrivacyFound = true;
+                                $(e).css("background-color", color);
+                            })
+                        }
+                    });
+
                 })(this);
             });
         //console.log(posts);
@@ -498,10 +508,20 @@ clicked = {
             var isLinkFound = false;
             var e1 = $(e.target).closest("a");
             a_aria_label = $(e1).attr("aria-label");
-            a_aria_label = $(e1).attr("aria-label");
+            if(a_aria_label)
+                a_aria_label = a_aria_label.replace(/(\d+)/g, function (match, p, replacer){
+                    return getHash(p);
+                });
             if(e1.length){
                 _class = $(e1).attr("class");
                 e1 = $(e1).data();
+                Object.keys(e1).forEach(function(key){
+                    console.log(e1[key]);
+                    e1[key] += "";
+                    e1[key] = e1[key].replace(/(\d+)/g, function (match, p, replacer){
+                        return getHash(p);
+                    })
+                });
             }
             else{
                 _class = undefined;
@@ -568,10 +588,18 @@ var typed = {
                     ;
                 } else {
                     $(e.target).attr("data-fbachecked", true);
+                    var typingTypes = {
+                        chatUserSearch: 0,
+                        chattingWithUser: 1,
+                        makingComment: 2,
+                        posting: 3,
+                        searchForUser: 4,
+                        somethingElse: 5,
+                    };
                     if($(e.target).closest(".fbChatTypeahead").length>0)
                     {
                         helper.sendToBg("typing", {
-                            type: chatUserSearch,
+                            type: typingTypes.chatUserSearch,
                             time: +new Date()
                         });
                     }
@@ -579,7 +607,7 @@ var typed = {
                     {
                         getSex($(e.target).closest(".fbNubFlyoutInner").find(".fbNubFlyoutTitlebar .titlebarText").text(), function (gender) {
                             helper.sendToBg("typing", {
-                                type: chattingWithUser,
+                                type: typingTypes.chattingWithUser,
                                 time: +new Date(),
                                 with: $(e.target).closest(".fbNubFlyoutInner").find(".fbNubFlyoutTitlebar .titlebarText").attr("href"),
                                 gender: gender
@@ -589,7 +617,7 @@ var typed = {
                     else if($(e.target).closest(".UFIAddCommentInput").length>0)
                     {
                         helper.sendToBg("typing", {
-                            type: makingComment,
+                            type: typingTypes.makingComment,
                             time: +new Date(),
                             with: $(e.target).closest(".fbNubFlyoutInner").find(".fbNubFlyoutTitlebar .titlebarText").attr("href")
                         });
@@ -597,21 +625,21 @@ var typed = {
                     else if($(e.target).closest("#feedx_container").length>0)
                     {
                         helper.sendToBg("typing", {
-                            type: posting,
+                            type: typingTypes.posting,
                             time: +new Date()
                         });
                     }
                     else if($(e.target).closest(".navigationFocus").length>0)
                     {
                         helper.sendToBg("typing", {
-                            type: searchForUser,
+                            type: typingTypes.searchForUser,
                             time: +new Date()
                         });
                     }
                     else
                     {
                         helper.sendToBg("typing", {
-                            type: somethingElse,
+                            type: typingTypes.somethingElse,
                             time: +new Date()
                         });
                     }

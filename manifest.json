@@ -34,6 +34,7 @@
                 "js/classes/serverLayout.js",
                 "js/global/jquery.min.js",
                 "js/global/generalFunctions.js",
+                "js/global/generalFunctions.js",
                 "js/enum/anonUser.js",
                 "js/enum/gender.js",
                 "js/enum/message.js",

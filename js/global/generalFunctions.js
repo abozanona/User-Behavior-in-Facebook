@@ -55,6 +55,9 @@ function getHash(string){
  */
 function getSingleValue(key, fn){
     chrome.storage.local.get(key, function(e) {
+        if(key == "names"){
+            console.log(e);
+        }
         if(JSON.stringify(e) == JSON.stringify({})){
             fn(null);
             return;
@@ -242,6 +245,14 @@ function isElementKeyValueInArray(key, value, array) {
             return true;
     return false;
 }
+function getElementKeyValueInArray(key, value, array) {
+    if(array[key] && array[key]==value)
+        return array[key];
+    for(var i=0;i<array.length;i++)
+        if(array[i][key] && array[i][key]==value)
+            return array[i];
+    return false;
+}
 function getElementFromArray(key, array) {
     if(array[key])
         return array[key];
@@ -271,5 +282,52 @@ function facebookTabsNumber(fn) {
             if(foundTabs[i].url.indexOf(".facebook.com") != -1)
                 count++;
         fn(count);
+    });
+}
+
+function getLanguage(fn){
+    $.get("https://www.facebook.com/settings", function( data ) {
+        data=data.toString();
+        data=data.substring(0, 100);
+        data=data.match(/lang\s*=\s*"[a-zA-Z-]+"/g);
+        data=data[0].replace("lang=\"", "");
+        data=data.replace("\"", "");
+        if(data)
+            fn(data);
+    });
+}
+
+function collectResult(fn){
+    result={users: undefined, actions: [], apps:undefined, devices:undefined, activityLog:undefined};
+    getSingleValue("users", function (users) {
+        getSingleValue("apps", function (apps) {
+            getSingleValue("devices", function (devices) {
+                getSingleValue("activityLog", function (activityLog) {
+                    result.users = users;
+                    result.apps=apps;
+                    result.devices=devices;
+                    result.activityLog=activityLog;
+                    var ids=[];
+                    if(users){
+                        for(var i=0;i<users.length;i++) {
+                            ids.push(users[i].id);
+                        }
+                        var usersCount=users.length;
+                        for(var i=0;i<users.length;i++)
+                            (function (userId) {
+                                var userObject={id:userId, requests:undefined}
+                                getSingleValue("requests" + userId, function (requests) {
+                                    userObject.requests=requests;
+                                    result.actions.push(userObject);
+                                    usersCount--;
+                                    if(!usersCount){
+                                        fn(result);
+                                    }
+                                });
+                            })(ids[i]);
+                    }
+                });
+            });
+        });
     });
 }
