@@ -1,7 +1,13 @@
 //todo read messages
 
-
-openJSONViewer();
+chrome.runtime.onInstalled.addListener(function(details){
+    // if(details.reason == "install"){
+    // }else if(details.reason == "update"){
+    // }
+    setSingleValue("installWelcome", true, function () {
+        chrome.tabs.create({url: chrome.extension.getURL('popup.html')});
+    });
+});
 chrome.tabs.onUpdated.addListener(function (tab) {
     chrome.tabs.query({}, function(foundTabs) {
         var count = 0;
