@@ -2,8 +2,15 @@
  * gets user's id
  * @param {function}fn(user_id) Callback with user's id
  */
+var userIdAsGlobal;
 function getUserID(fn){
+    if(userIdAsGlobal) {
+        fn(userIdAsGlobal);
+        return;
+        console.log(userIdAsGlobal);
+    }
     getCookieValue("c_user", function (value) {
+        userIdAsGlobal = value;
         fn(value);
     });
 }
@@ -56,7 +63,7 @@ function getHash(string){
 function getSingleValue(key, fn){
     chrome.storage.local.get(key, function(e) {
         if(key == "names"){
-            console.log(e);
+            //console.log(e);
         }
         if(JSON.stringify(e) == JSON.stringify({})){
             fn(null);

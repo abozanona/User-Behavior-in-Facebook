@@ -250,13 +250,16 @@ var logic = {
         else
             postData.postId = 0;//may be sponsored post => no id
         //uiStreamPrivacy fbStreamPrivacy fbPrivacyAudienceIndicator _5pcq
-        if(postObj.find(".fbStreamPrivacy"))
-            postData.privacy = postObj.find(".fbStreamPrivacy").attr("data-tooltip-content");
-        else if(postObj.find("._6a._29ee._4f-9._43_1"))
-            postData.privacy = postObj.find("._6a._29ee._4f-9._43_1").attr("data-tooltip-content");
-        else
-            postData.privacy = undefined;
-
+        if(postObj.attr('data-privacy')) {
+            postData.privacy = postObj.attr('data-privacy');
+        }
+        else {
+            var _prvc = postObj.find("[id*=feed_subtitle_] [data-tooltip-content]").attr("data-tooltip-content");
+            postObj.attr('data-privacy', _prvc);
+            checkPrivacy(_prvc, function (data) {
+                postData.privacy = data;
+            });
+        }
         postData.likes = postObj.find(".likes").text();
         postData.comments_shares_viewes = postObj.find("._ipo").text();
         postData.postTimestamp = postObj.parent().parent().attr("data-timestamp");
@@ -413,24 +416,19 @@ var looked = {
         if(window.global.isFBWEnabled)
             $(posts).each(function (index) {
                 (function (e) {
-                    var privacy=undefined;
-                    // if($(e).find(".fbStreamPrivacy"))
-                    //     privacy = $(e).find(".fbStreamPrivacy").attr("data-tooltip-content");
-                    // else if($(e).find("._6a._29ee._4f-9._43_1"))
-                    //     privacy = $(e).find("._6a._29ee._4f-9._43_1").attr("data-tooltip-content");
-                    //FIX very time consuming
-                    //todo very time consuming, not usable.
-                    var isPrivacyFound = false;
-                    $(e).find("a[data-tooltip-content]").each(function (index) {
-                        if(!isPrivacyFound || 1) {
-                            privacy = $(this).attr("data-tooltip-content");
-                            getPrivacyColor(privacy, function (color) {
-                                isPrivacyFound = true;
+                    if($(e).attr('data-iscolored')) {
+                    }
+                    else {
+                        var _prvc = $(e).find("[id*=feed_subtitle_] [data-tooltip-content]").attr("data-tooltip-content");
+                        //checkPrivacy(_prvc, function (privacy) {
+                            console.log("1111>", privacy);
+                            getPrivacyColor(_prvc, function (color) {
+                                $(e).attr('data-privacy', _prvc);
+                                $(e).attr('data-iscolored', "1");
                                 $(e).css("background-color", color);
-                            })
-                        }
-                    });
-
+                            });
+                        //});
+                    }
                 })(this);
             });
         //console.log(posts);

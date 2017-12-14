@@ -30,21 +30,22 @@ function collectFriendsID(fn){
                     else
                         mutualFriendsNumber=parseInt(mutualFriendsNumber);
                     var isSex=1;
-                    getSex(friend_name, function (res) {
-                        minLen2--;
-                        friendsID.push({
-                            "id" : friend_id,
-                            "mutual_friends" : mutualFriendsNumber,
-                            "gender": res,
-                            //FIX read it from the activity log => not necessary required.
-                            //https://www.facebook.com/abozanona/allactivity?privacy_source=activity_log&log_filter=cluster_8
-                            "friendship_date" :"00"
+                    (function (friend_id, mutualFriendsNumber, friend_name) {
+                        getSex(friend_name, function (res) {
+                            minLen2--;
+                            friendsID.push({
+                                "id" : getHash(friend_id),
+                                "mutual_friends" : mutualFriendsNumber,
+                                "gender": res,
+                                //FIX read it from the activity log => not necessary required.
+                                //https://www.facebook.com/abozanona/allactivity?privacy_source=activity_log&log_filter=cluster_8
+                                "friendship_date" :"00"
+                            });
+                            if(!minLen2)
+                                getNewList(startindex);
+                            isSex = 0;
                         });
-                        if(!minLen2)
-                            getNewList(startindex);
-                        isSex = 0;
-                    });
-                    console.log("hare");
+                    })(friend_id, mutualFriendsNumber, friend_name);
                 }
             } else {
                 if(friendsID.length==0) {
@@ -53,7 +54,6 @@ function collectFriendsID(fn){
                 }
                 else{
                     fn(friendsID);
-                    console.log(friendsID);
                 }
             }
         });
@@ -76,7 +76,7 @@ function collectLikedPages(fn){
                         for(temp_counter_var=0;responceprocess[temp_counter_var];temp_counter_var++){
                             var page_id=responceprocess[temp_counter_var].replace('data-profileid=\\\"',"");
                             userLikes.push({
-                                "id" : page_id,
+                                "id" : getHash(page_id),
                                 "likeTime" : "dd"
                             });
                         }
@@ -110,7 +110,7 @@ function collectGroups(fn){
                     getGroupMembersNumber(id, function (membersNumberObj) {
                         getPhotosNumberAndFilesNumber(id, function (id, photos, files, privacy) {
                             groupsID.push({
-                                id: id,
+                                id: getHash(id),
                                 membersNumber: membersNumberObj,
                                 photos: photos,
                                 files: files,
@@ -174,8 +174,8 @@ function collectGender(fn) {
     getUserID(function(user_id) {
 
         $.get("https://m.facebook.com/profile.php?v=info&lst=" + user_id + ":" + user_id + ":", function( data ) {
-            var age = $(data).find("#basic-info ._5cds[title='Birthday'] ._5cdv").text();
-            var gender = $(data).find("#basic-info ._5cds[title='Gender'] ._5cdv").text();
+            var age = $(data).find("#basic-info ._5cds:nth-child(1) ._5cdv").text();
+            var gender = $(data).find("#basic-info ._5cds:nth-child(2) ._5cdv").text();
             fn({
                 age: age,
                 gender: gender

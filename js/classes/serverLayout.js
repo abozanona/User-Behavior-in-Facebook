@@ -27,10 +27,11 @@ function checkPrivacy(_privacy, fn) {
     (function (_privacy) {
         getLanguage(function (lang) {
             if(lang && privacyRes[lang]){
-                for(var i=0;i<4;i++)
-                    if(privacyRes[lang][i] == _privacy){
+                for(var i=0;i<4;i++) {
+                    if (privacyRes[lang][i].indexOf(_privacy) != -1) {
                         fn(i);
                     }
+                }
             }
             else{
                 //console.log("privacy", "Language not supported");
@@ -43,10 +44,10 @@ function getPrivacyColor(privacy, fn) {
         getSingleValue("colors", function (e) {
             if(!e){
                 e=[
-                    "#000000",
-                    "#606060",
-                    "#660000",
-                    "#ff00ff",
+                    "#baffb2",
+                    "#ffdab2",
+                    "#ffa3a3",
+                    "#ccdaff",
                     "#cccccc"
                 ];
             }
@@ -96,10 +97,17 @@ function submitStudyResults(results, fn) {
 }
 
 function dataFromGenderURL(name, fn){
-    $.get("https://gender-api.com/get?split=" + name, function (data) {
-        if(data.indexOf("female"))
-            fn(GENDER.FEMALE);
-        else if(data.indexOf("male"))
+    name = name.split(" ")[0];
+    name = name.replace(/\W/g, '');
+    if(name == "")
+    {
+        fn(GENDER.UNKNOWN);
+        return;
+    }
+    $.get("https://api.genderize.io/?name=" + name, function (data) {
+        if(data.gender == "male")
+            fn(GENDER.MALE);
+        else if(data.gender == "female")
             fn(GENDER.FEMALE);
         else
             fn(GENDER.UNKNOWN);
@@ -114,7 +122,7 @@ function getSex(name, fn) {
     getSingleValue("names", function (e) {
         if(!e || !e.length){
             e = [];
-            $.get(server + "sex.php?name=" + name, function (data) {
+            dataFromGenderURL( name, function (data) {
                 if(data == 1){
                     fn(GENDER.MALE);
                     e.push({
@@ -147,7 +155,7 @@ function getSex(name, fn) {
             return;
         }
         else{
-            $.get(server + "sex.php?name=" + name, function (data) {
+            dataFromGenderURL(name, function (data) {
                 if(data == 1){
                     fn(GENDER.MALE);
                     e.push({

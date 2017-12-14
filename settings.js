@@ -2,10 +2,10 @@ $(document).ready(function () {
     getSingleValue("colors", function (e) {
         if(!e){
             e=[
-                "#000000",
-                "#606060",
-                "#660000",
-                "#ff00ff",
+                "#baffb2",
+                "#ffdab2",
+                "#ffa3a3",
+                "#ccdaff",
                 "#cccccc"
             ];
         }
@@ -45,10 +45,10 @@ $(document).on("change" , "#public" , function(){
     getSingleValue("colors", function (e) {
         if(!e){
             e=[
-                "#000000",
-                "#606060",
-                "#660000",
-                "#ff00ff",
+                "#baffb2",
+                "#ffdab2",
+                "#ffa3a3",
+                "#ccdaff",
                 "#cccccc"
             ];
         }
@@ -62,10 +62,10 @@ $(document).on("change" , "#friends" , function(){
     getSingleValue("colors", function (e) {
         if(!e){
             e=[
-                "#000000",
-                "#606060",
-                "#660000",
-                "#ff00ff",
+                "#baffb2",
+                "#ffdab2",
+                "#ffa3a3",
+                "#ccdaff",
                 "#cccccc"
             ];
         }
@@ -79,10 +79,10 @@ $(document).on("change" , "#onlyme" , function(){
     getSingleValue("colors", function (e) {
         if(!e){
             e=[
-                "#000000",
-                "#606060",
-                "#660000",
-                "#ff00ff",
+                "#baffb2",
+                "#ffdab2",
+                "#ffa3a3",
+                "#ccdaff",
                 "#cccccc"
             ];
         }
@@ -96,10 +96,10 @@ $(document).on("change" , "#custom" , function(){
     getSingleValue("colors", function (e) {
         if(!e){
             e=[
-                "#000000",
-                "#606060",
-                "#660000",
-                "#ff00ff",
+                "#baffb2",
+                "#ffdab2",
+                "#ffa3a3",
+                "#ccdaff",
                 "#cccccc"
             ];
         }
@@ -113,10 +113,10 @@ $(document).on("change" , "#unknown" , function(){
     getSingleValue("colors", function (e) {
         if(!e){
             e=[
-                "#000000",
-                "#606060",
-                "#660000",
-                "#ff00ff",
+                "#baffb2",
+                "#ffdab2",
+                "#ffa3a3",
+                "#ccdaff",
                 "#cccccc"
             ];
         }

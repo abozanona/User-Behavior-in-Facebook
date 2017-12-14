@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb986706-bfab-43b0-bbf6-c6a9a805c4ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/popup.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/icon.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/background.js" afterPath="$PROJECT_DIR$/js/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/popup.html" afterPath="$PROJECT_DIR$/popup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/classes/serverLayout.js" afterPath="$PROJECT_DIR$/js/classes/serverLayout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/classes/theCollector.js" afterPath="$PROJECT_DIR$/js/classes/theCollector.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/global/data-selfie.js" afterPath="$PROJECT_DIR$/js/global/data-selfie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/global/generalFunctions.js" afterPath="$PROJECT_DIR$/js/global/generalFunctions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.js" afterPath="$PROJECT_DIR$/settings.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,46 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manifest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="background.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/background.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            <state relative-caret-position="17">
+              <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="popup.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="popup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/popup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -77,37 +44,43 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cons</find>
-      <find>getPageType</find>
-      <find>.match</find>
-      <find>webRequest</find>
-      <find>chrome.tabs.sendMessage</find>
-      <find>facebookTabsNumber</find>
-      <find>background</find>
-      <find>sjcl</find>
-      <find>fn</find>
-      <find>mutualFriendsNumber</find>
-      <find>exist</find>
-      <find>minLen2</find>
-      <find>fro</find>
-      <find>tagi</find>
-      <find>pla pla</find>
-      <find>lang</find>
-      <find>)(</find>
-      <find>.each</find>
-      <find>getPagePosts</find>
-      <find>nameerr</find>
-      <find>match</find>
-      <find>data</find>
-      <find>a_aria_label</find>
-      <find>openJSONViewer</find>
       <find>getNewList</find>
       <find>alert</find>
       <find>sex.php?name</find>
       <find>friend</find>
       <find>priva</find>
       <find>Facebook privacy watcher.</find>
+      <find>3 of</find>
+      <find>mutualFriendsNumber</find>
+      <find>hash</find>
+      <find>grou</find>
+      <find>pages</find>
+      <find>gender</find>
+      <find>cons</find>
+      <find>priv</find>
+      <find>privacy</find>
+      <find>isPrivacyFound</find>
+      <find>feed_subtitle_</find>
+      <find>d*=feed_subtitle_]</find>
+      <find>d*=feed_subtitle_] [data-</find>
+      <find>&quot;#000000&quot;,</find>
+      <find>&quot;#606060&quot;,</find>
+      <find>&quot;#660000&quot;,</find>
+      <find>&quot;#ff00ff&quot;,</find>
+      <find>7cc9bd</find>
+      <find>25590d</find>
+      <find>background-color</find>
+      <find>=feed_subtitle_] [data-tooltip</find>
+      <find>_prvc</find>
+      <find>data-privacy</find>
+      <find>openjs</find>
     </findStrings>
+    <replaceStrings>
+      <replace>&quot;#baffb2&quot;,</replace>
+      <replace>&quot;#ffdab2&quot;,</replace>
+      <replace>&quot;#ffa3a3&quot;,</replace>
+      <replace>&quot;#ccdaff&quot;,</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Nullsky\Desktop\extention\php</dir>
     </dirStrings>
@@ -138,15 +111,15 @@
         <option value="$PROJECT_DIR$/js/enum/user.js" />
         <option value="$PROJECT_DIR$/faq.html" />
         <option value="$PROJECT_DIR$/aboutus.html" />
-        <option value="$PROJECT_DIR$/js/global/data-selfie.js" />
-        <option value="$PROJECT_DIR$/js/global/generalFunctions.js" />
         <option value="$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js" />
-        <option value="$PROJECT_DIR$/js/classes/serverLayout.js" />
-        <option value="$PROJECT_DIR$/js/classes/theCollector.js" />
-        <option value="$PROJECT_DIR$/js/background.js" />
         <option value="$PROJECT_DIR$/popup.js" />
         <option value="$PROJECT_DIR$/popup.html" />
         <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/js/global/generalFunctions.js" />
+        <option value="$PROJECT_DIR$/js/classes/theCollector.js" />
+        <option value="$PROJECT_DIR$/js/classes/serverLayout.js" />
+        <option value="$PROJECT_DIR$/js/global/data-selfie.js" />
+        <option value="$PROJECT_DIR$/js/background.js" />
       </list>
     </option>
   </component>
@@ -180,7 +153,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,13 +176,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="back&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;man&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/manifest.json&#10;server&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;col&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;serv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;data&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;gene&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;gen&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;ser&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;dat&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;priv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/php/checkprivacy.php&#10;ba&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;abo&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;faq&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/faq.html&#10;backgr&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;user&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;se&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;da&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/data-selfie.js&#10;ge&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/generalFunctions.js&#10;sett&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/classes/settings.js&#10;theco&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/classes/theCollector.js&#10;activ&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/classes/activityLog.js&#10;setti&#9;FILE&#9;file:///home/nullsky/Desktop/extention/settings.js&#10;mani&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;ma&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;m&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;coll&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js" />
+    <property name="SearchEverywhereHistoryKey" value="back&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;data&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;sett&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/settings.js&#10;setting&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;gene&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;serv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;ser&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;use&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;the&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;theco&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;thec&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;se&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;man&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/manifest.json&#10;server&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;col&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;gen&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;dat&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;priv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/php/checkprivacy.php&#10;ba&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;abo&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;faq&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/faq.html&#10;backgr&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;user&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;da&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/data-selfie.js&#10;ge&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/generalFunctions.js&#10;activ&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/classes/activityLog.js&#10;setti&#9;FILE&#9;file:///home/nullsky/Desktop/extention/settings.js&#10;mani&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;ma&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;m&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;coll&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -329,12 +302,14 @@
       <workItem from="1512503254316" duration="11296000" />
       <workItem from="1512543930194" duration="1851000" />
       <workItem from="1512755192407" duration="15000" />
-      <workItem from="1512801085782" duration="2068000" />
+      <workItem from="1512801085782" duration="2266000" />
+      <workItem from="1512843542172" duration="252000" />
+      <workItem from="1512997364725" duration="12089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122292000" />
+    <option name="totallyTimeSpent" value="134831000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -347,11 +322,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25669643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -363,7 +338,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -476,13 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/feedback.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
@@ -546,20 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/enum/gender.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/activityLog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1">
@@ -571,13 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/global/data-selfie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="515" column="0" lean-forward="false" selection-start-line="515" selection-start-column="0" selection-end-line="515" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -595,34 +541,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/enum/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="112" column="4" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/theCollector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/serverLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="118" column="36" lean-forward="false" selection-start-line="118" selection-start-column="36" selection-end-line="118" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/faq.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -630,7 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -642,38 +563,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/global/generalFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="79" column="9" lean-forward="false" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/popup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="391">
+          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
           <folding>
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/enum/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/enum/gender.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/global/generalFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/theCollector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="177" column="70" lean-forward="false" selection-start-line="177" selection-start-column="70" selection-end-line="177" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/global/data-selfie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="331" column="0" lean-forward="false" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/serverLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
           <folding />
         </state>
       </provider>
