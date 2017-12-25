@@ -13,9 +13,14 @@ In this study, two universities the researchers belongs to:
 * Technische Universität Darmstadt
 
 ### Who we are?
-We are a research group in computer field, our group .
+We are a research group in computer field, our group:
+
 *Hani Salah - hani@ppu.edu
+
 *PhD Thomas Paul - thomas.paul@cs.tu-darmstadt.de
+
 *Eng. Abdulhamead Abuzanunah - abozanona@gmail.com
-*Meqdad darweesh - meqdad.darweesh@gmail.com
-*Hamzah Bahar - hamzah.bahar@outlook.com
+
+*Eng. Meqdad darweesh - meqdad.darweesh@gmail.com
+
+*Eng. Hamzah Bahar - hamzah.bahar@outlook.com
