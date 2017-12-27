@@ -4,6 +4,7 @@ require 'database.php';
 if(!isset($_GET['email']))
 	die();
 $email=$_GET['email'];
+$email = mysqli_real_escape_string($con, $email);
 
 $sql = "SELECT * FROM emails where email='$email'";
 $result = $conn->query($sql);

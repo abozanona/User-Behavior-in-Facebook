@@ -1,5 +1,5 @@
 //todo read messages
-openJSONViewer();
+
 chrome.runtime.onInstalled.addListener(function(details){
     // if(details.reason == "install"){
     // }else if(details.reason == "update"){
@@ -48,18 +48,22 @@ function checkSendingData() {
         }
 
         var daysDifference = timestampDifference(today, time).days;
-        if(daysDifference>7){
-            setSingleValue("weekPeriod", today, function () {
-                openJSONViewer();
+        if(daysDifference>0){
+            getSingleValue("isAutoSave", function(isAutoSave){
+                if(isAutoSave){
+                    collectResult(function (result) {
+                        submitStudyResults(result, function () {
+                            ;
+                        })
+                    });
+                }
+                else{
+                    openJSONViewer();
+                }
             });
         }
     });
 
-    collectResult(function (result) {
-        submitStudyResults(result, function () {
-            ;
-        })
-    });
 
 }
 checkSendingData();
@@ -86,7 +90,7 @@ chrome.runtime.onMessage.addListener(
                 e.push(request);
                 setSingleValue("requests" + userID, e, function () {
                     //is this working?
-                    console.log(e);
+                    //console.log(e);
                 })
             });
         })

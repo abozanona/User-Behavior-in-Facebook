@@ -1,11 +1,3 @@
-/**
- * Creates Message Object
- * @param id conversation id
- * @param messageType
- * @param anonUser
- * @param messagePeriods
- * @returns {MESSAGE}
- */
 function makeMessage(id, messageType, anonUser, messagePeriods){
     return {
         id: id,

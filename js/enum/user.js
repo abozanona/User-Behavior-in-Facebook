@@ -1,7 +1,3 @@
-/**
- * Collects data/information about new users and registers them.
- * @param shUID the hashed value of the new user's id
- */
 function registerNewUser(tabId, shUID){
     var id=shUID;
 
@@ -47,20 +43,6 @@ function registerNewUser(tabId, shUID){
         });
     });
 }
-
-/**
- * Creates a User object
- * @param id The user's hashed id
- * @param friends Array Of user's friends
- * @param pages Array of user's liked pages
- * @param groups Array of User's joint groups
- * @param gender User's gender
- * @param country User's latitude and longitude
- * @param language User's lang.
- * @param DoB User's Date of birth
- * @param aboutInfo User's personal information in his 'about' section'
- * @returns {USER}
- */
 function makeUser(id, friends, pages, groups, gender, country, language, DoB, aboutInfo/*, messages/*, actions, reactions, sessions, posts, events*/){
     return {
         id: id,
@@ -74,11 +56,6 @@ function makeUser(id, friends, pages, groups, gender, country, language, DoB, ab
         aboutInfo: aboutInfo,
     };
 }
-/**
- * Adds the user to the database of participants
- * @param user user's hashed id
- * @param {function} fn Callback
- */
 function existUser(user, fn){
     console.log(user);
     getSingleValue("users", function(e){
@@ -103,11 +80,6 @@ function existUser(user, fn){
         fn();
     });
 }
-/**
- * Checks If the user already exists in the participants database
- * @param shUID user Hashed id.
- * @param fn(isExist){function} fn Callback with boolean parameter
- */
 function isUserExists(shUID, fn){
     getSingleValue("users", function(e){
         if(e==null)
@@ -125,12 +97,6 @@ function isUserExists(shUID, fn){
         fn(true);
     });
 }
-/**
- * Mark user as a non-volunteer.
- * This function is called when a facebook user chooses not to participate in the study
- * @param shUID user's hashed id
- * @param {function} fn Callback
- */
 function blockUser(shUID, fn){
     getSingleValue("blockedUsers", function(e){
         if(e==null)
@@ -152,11 +118,6 @@ function blockUser(shUID, fn){
         fn();
     });
 }
-/**
- * Checks If the user has choosed not to participate in the study or not.
- * @param shUID User's hashed id
- * @param {function}fn(isBlocked) Callback
- */
 function isUserBlocked(shUID, fn) {
     getSingleValue("blockedUsers", function(e){
         if(e==null)

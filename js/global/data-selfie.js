@@ -1,6 +1,11 @@
 //thanks to
 //https://github.com/d4t4x/data-selfie
 
+// window.addEventListener('message', function(e) {
+//     console.log("message", e);
+// }, true);
+//
+
 /**
  * Get page type
  * @param url current url of the page
@@ -196,6 +201,7 @@ var helper = {
         return moment().format();
     },
     sendToBg: function(_type, _data) {
+        console.log("_type", _type);
         chrome.runtime.sendMessage({
             type: _type,
             data: _data
@@ -421,7 +427,6 @@ var looked = {
                     else {
                         var _prvc = $(e).find("[id*=feed_subtitle_] [data-tooltip-content]").attr("data-tooltip-content");
                         //checkPrivacy(_prvc, function (privacy) {
-                            console.log("1111>", privacy);
                             getPrivacyColor(_prvc, function (color) {
                                 $(e).attr('data-privacy', _prvc);
                                 $(e).attr('data-iscolored', "1");

@@ -5,6 +5,8 @@ if(!isset($_POST['clientid'], $_POST['data']))
 	die();
 $clientid=$_POST['clientid'];
 $data=$_POST['data'];
+$clientid = mysqli_real_escape_string($con, $clientid);
+$data = mysqli_real_escape_string($con, $data);
 
 $sql = "SELECT * FROM studyresults where clientid='$clientid'";
 $result = $conn->query($sql);

@@ -4,6 +4,7 @@ require 'database.php';
 if(!isset($_GET['q']))
 	die('4');
 $q=$_GET['q'];
+$q = mysqli_real_escape_string($con, $q);
 $sql = "SELECT * FROM privacy where name='$q'";
 $result = $conn->query($sql);
 $count = mysqli_num_rows($result);

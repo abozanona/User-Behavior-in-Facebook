@@ -1,7 +1,3 @@
-/**
- * gets user's id
- * @param {function}fn(user_id) Callback with user's id
- */
 var userIdAsGlobal;
 function getUserID(fn){
     if(userIdAsGlobal) {
@@ -19,10 +15,6 @@ function openJSONViewer() {
     chrome.tabs.create({url: chrome.extension.getURL('jsonViewer.html')});
 }
 
-/**
- * Chacks if current tab page is for facebook
- * @param {function}fn(isTrue) Callback
- */
 function isFacebookNormalTab(fn){
     chrome.tabs.getSelected(null, function (tab) {
         if(tab.incognito){
@@ -43,23 +35,12 @@ function isFacebookNormalTab(fn){
         }
     });
 }
-/**
- * Hash a string using sha256 algorithm
- * @param string The string to be hashed
- * @returns {string}
- */
 function getHash(string){
     var salt = "ABCD";
     string = string;// + salt;
     var out = sjcl.hash.sha256.hash(string);
     return sjcl.codec.hex.fromBits(out);
 }
-
-/**
- * Load data from local storage
- * @param key data key
- * @param {function}fn(data) Callback with the result of stored data
- */
 function getSingleValue(key, fn){
     chrome.storage.local.get(key, function(e) {
         if(key == "names"){
@@ -78,12 +59,6 @@ function getSingleValue(key, fn){
         fn(e[key]);
     });
 }
-/**
- * Stores data in local storage
- * @param key data key
- * @param value data value
- * @param {function}fn Callback
- */
 function setSingleValue(key, value, fn){
     //console.log("user value", value);
     try {
@@ -100,11 +75,6 @@ function setSingleValue(key, value, fn){
         fn();
     });
 }
-
-/**
- * Check if there's any logged in user
- * @param {function}fn(isTrue) Callback
- */
 function isUserLoggedIn(fn){
     getCookieValue("c_user", function (value) {
         if(value){
@@ -116,11 +86,6 @@ function isUserLoggedIn(fn){
     });
 }
 
-/**
- * removes all duplicates from an array
- * @param {Array}arr
- * @returns {Array} The array without duplicates
- */
 function unique_array(arr) {
     var i, j, cur, found;
     for (i = arr.length - 1; i >= 0; i--) {
@@ -137,10 +102,6 @@ function unique_array(arr) {
     }
     return arr;
 }
-/**
- * Injects the required libraries for the toast messages
- * @param {function}fn Callback
- */
 function initToaster(fn){
     //_todo must check if already injected,,,, is thar really necessary?
     //looks like it's fine to inject library more than once, or is it?
@@ -156,11 +117,6 @@ function initToaster(fn){
         });
     });
 }
-
-/**
- * Injects the required libraries for the toast messages
- * @param {function}fn Callback
- */
 function initToasterOnTab(tabId, fn){
     //_todo must check if already injected,,,, is thar really necessary?
     //looks like it's fine to inject library more than once, or is it?
@@ -183,24 +139,15 @@ var toastType={
     Warning : "toastWarning",
     Error : "toastError"
 };
-/**
- * Executes a script on the page DOM to create a toast message
- * @param tabId where to show the ,essage
- * @param {toastType}toastType //type of message
- * @param msg //message content
- * @param {function}fn Callback
- */
 function makeToast(tabId, toastType, msg, fn){
     msg=msg.replace(/"/g, '\\\"');
-    chrome.tabs.executeScript( tabId, {code: toastType + '("' + msg +'");'}, fn());
+    try {
+        chrome.tabs.executeScript(tabId, {code: toastType + '("' + msg + '");'}, fn());
+    }
+    catch (ex){
+        //Silence is gold :3
+    }
 }
-
-/**
- * Calculates the difference between two timestamps
- * @param {timestamp}date1 first timestamp
- * @param {timestamp}date2 second timestamp
- * @return difference between them
- */
 function timestampDifference(date1,date2){
     var difference = new Date(date1).getTime() - new Date(date2).getTime();
 
@@ -222,12 +169,7 @@ function timestampDifference(date1,date2){
         seconds: secondsDifference
     };
 }
-/**
- * checks if element exists in array
- * @param element
- * @param array
- * @return {boolean}
- */
+
 function isElementInArray(element, array) {
     if(array[element])
         return true;

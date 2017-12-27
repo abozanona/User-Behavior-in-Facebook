@@ -6,7 +6,6 @@
 
     <script src="js/global/generalFunctions.js"></script>
     <script src="js/global/jquery.min.js"></script>
-    <script src="js/global/jquery.json-viewer.js"></script>
     <link href="js/global/css/jquery.json-viewer.css" type="text/css" rel="stylesheet" />
 
     <style type="text/css">
@@ -38,7 +37,6 @@
             border-left: solid 2px #CCCCCC;
         }
     </style>
-    <script src="js/global/jquery.json-viewer.execute.js"></script>
 </head>
 <body>
     <div>
@@ -46,9 +44,14 @@
         <h4 style="display: inline">Palestime poly.. university - A Graduation project</h4><hr/>
     </div>
 
-    <h1>This is what we collected in the last week</h1>
+    <h1>This is what we collected about you</h1>
     <p>Pla pla pla....</p><hr/>
-    <a id="submit" href="#" class="btn btn-primary round">submit the study data to the server.</a><br/><br/>
+    <h3>Do you want to participate and send these anonymized data to the server?</h3>
+    <a id="submit" href="#" class="btn btn-primary round">submit the anonymized study data to the server this time only.</a> &nbsp;&nbsp;&nbsp;
+    <a id="submitAlways" href="#" class="btn btn-primary round">submit the anonymized study data always.</a> &nbsp;&nbsp;&nbsp;
+    <br/><br/>
     <pre id="json-renderer"></pre>
+    <script src="js/global/jquery.json-viewer.js"></script>
+    <script src="js/global/jquery.json-viewer.execute.js"></script>
 </body>
 </html>

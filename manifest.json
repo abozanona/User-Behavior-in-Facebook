@@ -60,13 +60,14 @@
         "activeTab",
         "geolocation",
         "webRequest",
+        "webRequestBlocking",
         "management",
         "tabs",
+        "http://www.google.com/",
         "https://ajax.googleapis.com/",
         "http://*.facebook.com/",
         "https://*.facebook.com/",
-        "https://fba.ppu.edu/",
-        "http://localhost/*"
+        "https://fba.ppu.edu/"
     ],
     "manifest_version": 2,
     "web_accessible_resources": [ "js/*"  ]

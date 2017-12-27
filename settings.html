@@ -29,32 +29,39 @@
 	</div>
 	<div class="container-fluid">
 		<h3>Change settings</h3><br/>
-		<div class="checkbox">
-			<h4>Posts colors</h4>
-			<table>
-				<tr>
-					<td>Public</td>
-					<td><input id="public" type="color"></td>
-				</tr>
-				<tr>
-					<td>Friends</td>
-					<td><input id="friends" type="color"></td>
-				</tr>
-				<tr>
-					<td>Only me</td>
-					<td><input id="onlyme" type="color"></td>
-				</tr>
-				<tr>
-					<td>Custom</td>
-					<td><input id="custom" type="color"></td>
-				</tr>
-				<tr>
-					<td>Unknown</td>
-					<td><input id="unknown" type="color"></td>
-				</tr>
-			</table>
-			<hr/>
-			<label><input id="isFBWEnabled" type="checkbox">Coloring posts</label><br/>
+		<div class="row">
+			<div class="col-sm-4">
+				<h4>Posts colors</h4>
+				<table>
+					<tr>
+						<td>Public</td>
+						<td><input id="public" type="color" disabled></td>
+					</tr>
+					<tr>
+						<td>Friends</td>
+						<td><input id="friends" type="color" disabled></td>
+					</tr>
+					<tr>
+						<td>Only me</td>
+						<td><input id="onlyme" type="color" disabled></td>
+					</tr>
+					<tr>
+						<td>Custom</td>
+						<td><input id="custom" type="color" disabled></td>
+					</tr>
+					<tr>
+						<td>Unknown</td>
+						<td><input id="unknown" type="color" disabled></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-sm-8">
+				<h6>Posts colors are fixed, They were chosen based on a previous study.</h6>
+			</div>
+		</div>
+		<hr/>
+		<label><input id="isFBWEnabled" type="checkbox">Coloring posts</label><br/>
+		<div style="visibility: hidden">
 			<hr/>
 			<input type="email" id="email" placeholder="example@company.com"/> <a id="submit" href="#" class="btn btn-primary round">subscribe to see the results of our study</a><br/>
 		</div>
