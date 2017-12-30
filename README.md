@@ -9,18 +9,24 @@ It also helps users to customize their privacy settings on Facebook.
 ## About us
 ### Which universities working on this study?
 In this study, two universities the researchers belongs to:
+
 * Palestine Polytechnic University
-* Technische Universität Darmstadt
+https://ppu.edu
+
+* Technische Universität Dresden
+https://tu-dresden.de
 
 ### Who we are?
 We are a research group in computer field, our group:
 
-*Hani Salah - hani@ppu.edu
+*PhD. Hani Salah - hani@ppu.edu
 
-*PhD Thomas Paul - thomas.paul@cs.tu-darmstadt.de
+*PhD. Thomas Paul - thomas.paul@cs.tu-darmstadt.de
+
+*PhD. Thorsten Sturfe - thorsten.sturfe@tu-dresden.de
 
 *Eng. Abdulhamead Abuzanunah - abozanona@gmail.com
 
-*Eng. Meqdad darweesh - meqdad.darweesh@gmail.com
+*Eng. Meqdad darweesh - 112085@ppu.edu.ps
 
-*Eng. Hamzah Bahar - hamzah.bahar@outlook.com
+*Eng. Hamzah Bahar - 141063@ppu.edu.ps
