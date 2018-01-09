@@ -233,7 +233,7 @@ var logic = {
             "origDesc": [], // what the shared content says (if at all)
             "suggested": [0, 0], // is it a suggested and sponsored post
             "duration": 0, // later can delete all with duration 0
-            "timestamp": helper.now()
+            "timestamp": (+new Date())
         };
     },
     getUserType: function(card) {
@@ -336,10 +336,15 @@ var logic = {
             _obj.duration = _sec;
             _obj.timestamp = moment(helper.now()).subtract(_sec, 'seconds').format();
             console.log(_obj);
-            getSex(_obj.gender, function (res) {
-                _obj.gender = res;
+            if (_obj.gender == parseInt(_obj.gender)){
                 helper.sendToBg("saveLooked", _obj);
-            });
+            }
+            else{
+                getSex(_obj.gender, function (res) {
+                    _obj.gender = res;
+                    helper.sendToBg("saveLooked", _obj);
+                });
+            }
         };
         this.resetClock();
         if (callback) { callback(); }
@@ -683,16 +688,16 @@ var kickoff = {
             looked.logic.lookedFocusedFalse();
             looked.logic.logLooked(looked.logic.cachedObj, window.global.sec);
             helper.sendToBg("blur",
-                {"timestamp": helper.now(), "sessionId" : window.global.sessionid, remainingTabs: window.global.tabsCount});
+                {"timestamp": (+new Date()), "sessionId" : window.global.sessionid, remainingTabs: window.global.tabsCount});
         };
         window.onbeforeunload = function() {
             helper.sendToBg("closeWindow",
-                {"timestamp": helper.now(), "sessionId" : window.global.sessionid, remainingTabs: window.global.tabsCount});
+                {"timestamp": (+new Date()), "sessionId" : window.global.sessionid, remainingTabs: window.global.tabsCount});
         };
         window.onfocus = function() {
             window.global.windowFocused = true;
             helper.sendToBg("focus",
-                {"timestamp": helper.now(), "sessionId" : window.global.sessionid, remainingTabs: window.global.tabsCount});
+                {"timestamp": (+new Date()), "sessionId" : window.global.sessionid, remainingTabs: window.global.tabsCount});
         };
         $.event.special.scrollstop.latency = 800;
         _window.on("scrollstop", throttle(2000, function() {

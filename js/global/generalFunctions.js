@@ -142,7 +142,7 @@ var toastType={
 function makeToast(tabId, toastType, msg, fn){
     msg=msg.replace(/"/g, '\\\"');
     try {
-        chrome.tabs.executeScript(tabId, {code: toastType + '("' + msg + '");'}, fn());
+        chrome.tabs.executeScript(tabId, {code: 'try {' + toastType + '("' + msg + '");}catch (e) {}'}, fn());
     }
     catch (ex){
         //Silence is gold :3

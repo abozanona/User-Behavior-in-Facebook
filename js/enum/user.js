@@ -52,7 +52,7 @@ function makeUser(id, friends, pages, groups, gender, country, language, DoB, ab
         gender: gender,
         country: country,
         language: language,
-        DoB: DoB,
+        //DoB: DoB,
         aboutInfo: aboutInfo,
     };
 }
@@ -88,6 +88,7 @@ function isUserExists(shUID, fn){
             setSingleValue("users", e, function(){
                 fn(false);
             });
+            return;
         }
         if(!isElementKeyValueInArray("id", shUID, e)){
             //user doesn't exist

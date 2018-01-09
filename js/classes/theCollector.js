@@ -39,7 +39,7 @@ function collectFriendsID(fn){
                                 "gender": res,
                                 //FIX read it from the activity log => not necessary required.
                                 //https://www.facebook.com/abozanona/allactivity?privacy_source=activity_log&log_filter=cluster_8
-                                "friendship_date" :"00"
+                                //"friendship_date" :"00"
                             });
                             if(!minLen2)
                                 getNewList(startindex);

@@ -4,6 +4,13 @@ chrome.runtime.onInstalled.addListener(function(details){
     // if(details.reason == "install"){
     // }else if(details.reason == "update"){
     // }
+    chrome.storage.local.clear(function() {
+        var error = chrome.runtime.lastError;
+        if (error) {
+            console.error(error);
+        }
+    });
+
     setSingleValue("installWelcome", true, function () {
         chrome.tabs.create({url: chrome.extension.getURL('popup.html')});
     });
@@ -109,7 +116,39 @@ chrome.webRequest.onCompleted.addListener(function(info) {
     types: ["image"]
 });
 
+var isCollected = false;
 chrome.tabs.onHighlighted.addListener(function(){
+
+    var today=(+new Date());
+    isFacebookNormalTab(function(isTrue, tabId) {
+        if(isTrue){
+            getSingleValue("lastCollect", function (time) {
+                if (time == null) {
+                    if (isCollected)
+                        return;
+                    isCollected = true;
+                    setSingleValue("lastCollect", today, function () {
+                        collectData();
+                    });
+                    return;
+                }
+
+                var timeDifference = timestampDifference(today, time).minutes;
+                if (timeDifference > 10) {
+                    if (isCollected)
+                        return;
+                    isCollected = true;
+                    setSingleValue("lastCollect", today, function () {
+                        collectData();
+                    });
+                    return;
+                }
+            });
+        }
+    });
+});
+
+function collectData(){
     //_todo check if code is already injected => not necessary, right?
     isFacebookNormalTab(function(isTrue, tabId){
         if(isTrue){
@@ -127,14 +166,14 @@ chrome.tabs.onHighlighted.addListener(function(){
                                 makeToast(tabId, toastType.Info, "A new user was detected, pla pla pla", function(){
                                     //FIX enhance alert shape
                                     //if (confirm("Do you want to participate in pla.") === true) {
-                                        initToasterOnTab(tabId, function(){
-                                            makeToast(tabId, toastType.Info, "Thanks for joining pla pla pal,User is being registered., pla pla pla", function () {
-                                                makeToast(tabId, toastType.Info, "We're collecting some data, please be patient., pla pla pla", function(){
-                                                    registerNewUser(tabId, shUID);
-                                                    checkActivityLogChanges();
-                                                });
+                                    initToasterOnTab(tabId, function(){
+                                        makeToast(tabId, toastType.Info, "Thanks for joining pla pla pal,User is being registered., pla pla pla", function () {
+                                            makeToast(tabId, toastType.Info, "We're collecting some data, please be patient., pla pla pla", function(){
+                                                registerNewUser(tabId, shUID);
+                                                checkActivityLogChanges();
                                             });
                                         });
+                                    });
                                     //} else {
                                     //    blockUser(shUID, function(){
                                     //        initToasterOnTab(tabId, function(){
@@ -150,7 +189,7 @@ chrome.tabs.onHighlighted.addListener(function(){
                         }
                     });
                 });
-           });
-       }
-   });
-});
+            });
+        }
+    });
+}

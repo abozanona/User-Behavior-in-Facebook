@@ -27,10 +27,15 @@ function checkPrivacy(_privacy, fn) {
     (function (_privacy) {
         getLanguage(function (lang) {
             if(lang && privacyRes[lang]){
+                var isFound = false;
                 for(var i=0;i<4;i++) {
                     if (privacyRes[lang][i].indexOf(_privacy) != -1) {
                         fn(i);
+                        isFound = true;
                     }
+                }
+                if(!isFound){
+                    fn(3);
                 }
             }
             else{
@@ -97,6 +102,7 @@ function submitStudyResults(results, fn) {
 }
 
 function dataFromGenderURL(name, fn){
+    console.log(name);
     name = name.split(" ")[0];
     name = name.replace(/\W/g, '');
     if(name == "")
