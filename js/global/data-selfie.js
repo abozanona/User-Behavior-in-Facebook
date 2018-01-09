@@ -327,6 +327,7 @@ var logic = {
 
         postData.gender = postObj.find(".fwb.fcg").text();
 
+        helper.sendToBg("postData", postData);
         cachedObj = postData;
     },
     logLooked: function(_obj, _sec, callback) {

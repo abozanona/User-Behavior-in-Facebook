@@ -96,7 +96,6 @@ chrome.runtime.onMessage.addListener(
                 }
                 e.push(request);
                 setSingleValue("requests" + userID, e, function () {
-                    //is this working?
                     //console.log(e);
                 })
             });
