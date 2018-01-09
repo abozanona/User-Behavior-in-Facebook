@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Facebook Privacy Analyzer & Watcher</title>
+	<title>Facebook Privacy Watcher & Analyzer</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<style>
 		.btn-lg.round {
@@ -18,54 +18,93 @@
 	</style>
 </head>
 <body>
-<a href="popup.html" class="btn btn-primary btn-sm round" style="position: fixed; bottom: 10px;left: 10px"><-</a>
-<div>
-	<img src="img/ppulogo.png" style="width:50px;height:50px"/>
-	<h4 style="display: inline">Facebook Privacy Analyzer & Watcher Research</h4><hr/>
-</div>
-<div class="container-fluid">
-	<h3>What are FPA and FPW?</h3>
-	<br>
-	<p>It's a browser extension (Chrome,Firefox)</p>
-	<p><b>FPA: Facebook Privacy Analyzer</b></p>
-	<p>used to collect data about facebook users (who want to participate).</p>
-	<p><b>FPW: Facebook Privacy Watcher</b></p>
-	<p>Used to help user to customize its privacy settings on Facebook via C4PS.</p>
-	<hr/>
-	<h3>What do we collect about you?</h3>
-	<br>
-	<p>We will collect about you:</p>
-	<li>Your Friend IDs.</li>
-	<li>Your Activity Log.</li>
-	<li>Information provided in "About" section in your profile.</li>
-	<li>Liked pages and joined groups.</li>
-	<li>Session time and the time you will spend on posts.</li>
-	<hr/>
-	<h3>What is C4PS?</h3>
-	<br>
-	<p><b>C</b>olors <b>for</b> <b>P</b>rivacy <b>S</b>ettings, it provides easy access to your privacy settings.</p>
-	<p>It uses colors to help you adjusting posts on Facebook. i.e:</p>
-	<li>Green: Public Post (Visible to every one).</li>
-	<li>Yellow: Friends.</li>
-	<li>Blue: Cutom Post (Selected Friends).</li>
-	<li>Red: Only me.</li>
-	<hr/>
-	<h3>Why this Research?</h3>
-	<br>
-	<p>Its a renewing of previous study to examine user behaviour on Facebook.</p>
-	<hr/>
-	<h3>What happend to the collected Data?</h3>
-	<br>
-	<p>Your data will be accumulated with other participants data, then it will be analyzed to obtain user behavior.
-		<b>Anonymization</b> is to be considered.</p>
-	<hr/>
-	<h3>How Anonymization is to be taken into account?</h3>
-	<br>
-	<p>Your data will be collected without your identity. i.e: we know that someone clicked like, but whom? we don't know.</p>
-	<hr/>
-	<h3>Example?</h3>
-	<br>
-	<p>You can take a look on the previous study at this <b>link</b>.</p>
-</div>
+	<a href="popup.html" class="btn btn-primary btn-sm round" style="position: fixed; bottom: 10px;left: 10px"><-</a>
+	<div>
+		<img src="img/ppulogo.png" style="width:50px;height:50px"/>
+		<h4 style="display: inline">FPWA Research Project</h4><hr/>
+	</div>
+	<div class="container-fluid">
+		<h3>What are FPA and FPW?</h3>
+		<br>
+		<p><b>FPWA</b> (<i>Facebook Privacy Watcher and Analyzer</i>) is a browser extension (i.e. plug-in) for Google Chrome.</p>
+		<p>It collects data about the privacy settings as well as about behavior of Facebook users.</p>
+		<p>It also helps users to customize their privacy settings on Facebook.</p>
+
+		<hr/>
+		<h3>Which data is collected by FPWA?</h3>
+		<br>
+		<p>FPWA collects the following data:</p>
+		<li>Hash value of the Facebook ID.</li>
+		<li>Counter (including timestamps) indicating how often the plug-in was activated</li>
+		<li>The visibility of each profile field before the first usage of the plug-in</li>
+		<li>The visibility of each profile field after using the plug-in</li>
+		<li>The type and visibility of timeline entries</li>
+		<li>Number of friends</li>
+		<li>Number of photos and labels</li>
+		<li>Number of likes (per item, per type)</li>
+		<li>Number of comments (per item, per type)</li>
+		<li>Countries from which we receive the feedbacks</li>
+		<li>The time users invest to examine newsfeed posts, w.r.t content creation, composition, and consumption</li>
+		<li>Demographical data, e.g. the gender and age of the user</li>
+		<li>The usage pattern w.r.t. functionalities</li>
+		<li>The use of third partly apps</li>
+		<li>Communication partners w.r.t to the social graph distance</li>
+		<li>The content shared by users (type of content, when it has been created or watched, size).</li>
+		<li>Attention that users pay to Facebook (by measuring durations and frequencies of sessions)</li>
+		<li>The popularity of different Facebook functionalities and apps (and what is the dominating function)</li>
+		<li>Communication patterns</li>
+		<li>Dynamics in user behavior</li>
+		<li>The percentage of users who leave Facebook without logging out or closing Facebook browser tab</li>
+		<li>Authors of the newsfeed content</li>
+		<li>Fraction of friends contirbutes to the newsfeed</li>
+		<li>The percentage of friends whos posts appear in newsfeed </li>
+		<li>How long does it take newsfeed post to be displayed by user?</li>
+		<li>How long different types of newsfeed entries stay in the viewport of the browser before being clicked?</li>
+		<li>How many newsfeed entries have been viewed on average per day?</li>
+		<li>What are the types of accessed content?</li>
+		<li>Statistics about visited pages</li>
+
+		<hr/>
+		<h3>How do we preserve your privacy</h3>
+		<br>
+		<p>Your data will be collected without your identity (e.g. we know that "<i>someone</i>" liked some post,
+			but we cannot know who did that).</p>
+		<p>Furthermore, your data is accumulated with the data of other participants. The collected data will be encoded using hash
+			algorithms (i.e. not reversable) which means that the database of FPWA plugin will contain just the hashed data. 
+			It's important point to know that it's a necessary property in the Hash algorithm to be not reversable, so the hashed data will stay hashed all the time.</p>
+
+		<hr/>
+		<h3>Why do we collect the aforementioned data about you and other volunteers?</h3>
+		<br>
+		<p>Its a renewing of previous study to examine user behaviour on Facebook.</p>
+		<p>The Research aims to achieve mainly two points:</p>
+		<li><i><b>Private Data Exposure in Facebook</b></i>
+			<p>The huge set of functionalities Facebook offering to their users
+				attracts lots of people from different age ranges to join Facebook.</p>
+				<p>This will make them vulnerable to different kinds risks. Among these, privacy. Protecting personal
+				data means a lot to most Facebook users. Even though most of them do not know how to set the right way.</p>
+				<p>In this research, we will use the plugin FPWA that will help them set their privacy settings
+				in a way that limit private data exposure.</p></li>
+		<li><i><b>Understanding User Behavior in Facebook</b></i>
+			<p>The behavior of Facebookers is critical for Facebook company itself,
+				and for the users too. For example, the user might be eager	to know statistics about his/her usage of Facebook
+				because he could spend a lot of his time on OSNs at the expense of his duty and responsibilities in the life.</p>
+				<p>These statistics may include: the most Facebook functionalities used, the time user spend on Facebook,
+				or even the time user spend on a specific functionality, and much more of statistics that can be measured.</p> </li>
+
+		<hr/>
+		<h3>How can you benefit from FPWA?</h3>
+		<br>
+		<p><b>First</b> of all, FPWA helps you to better customize your privacy settings in Facebook.</p>
+		<p>By using <i>Coloring Posts</i> option, the user will notice that his/her posts on newsfeed in the main page of Facebook
+			will be colored with a specific colors depending on the type of post privacy from the publisher,
+			this will increase the user attention about his privacy level and with whom he/she sharing his/her daily activities and news.</p>
+		<p><b>Second</b> FPWA gives you information about your behavior on Facebook. It also compares your behavior with other users.
+			<i>Next updates via Chrome Store will contain more advantages for the end user.</i></p>
+		<hr/>
+		<p>To visit our website, click <a href="https://fba.ppu.edu/" target="_blank">here</a>.</p>
+		<p>To visit the website of old two plugins, click here: <a href="http://www.daniel-puscher.de/fpw/" target="_blank">FPW</a>,
+		<a href="http://www.daniel-puscher.de/fpa/" target="_blank">FPA</a>.</p>
+	</div>
 </body>
 </html>
