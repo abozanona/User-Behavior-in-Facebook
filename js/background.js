@@ -162,12 +162,12 @@ function collectData(){
                     isUserExists(shUID, function (isTrue){
                         if(!isTrue){
                             initToasterOnTab(tabId, function(){
-                                makeToast(tabId, toastType.Info, "A new user was detected, pla pla pla", function(){
+                                makeToast(tabId, toastType.Info, "A new user was detected, Welcome...", function(){
                                     //FIX enhance alert shape
                                     //if (confirm("Do you want to participate in pla.") === true) {
                                     initToasterOnTab(tabId, function(){
-                                        makeToast(tabId, toastType.Info, "Thanks for joining pla pla pal,User is being registered., pla pla pla", function () {
-                                            makeToast(tabId, toastType.Info, "We're collecting some data, please be patient., pla pla pla", function(){
+                                        makeToast(tabId, toastType.Info, "Thanks for joining our study,User is being registered.", function () {
+                                            makeToast(tabId, toastType.Info, "We're collecting some data, please be patient.", function(){
                                                 registerNewUser(tabId, shUID);
                                                 checkActivityLogChanges();
                                             });
