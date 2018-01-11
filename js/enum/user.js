@@ -29,7 +29,7 @@ function registerNewUser(tabId, shUID){
                                             makeToast(tabId, toastType.Info, "Collecting data: 10 of 10", function () {
                                                 var user = makeUser(shUID, friendsArray, pagesArray, groupsArray, userGender, country, lang, DoB, aboutInfoArray);
                                                 existUser(user, function () {
-                                                    makeToast(tabId, toastType.Info, "User is registered succ. pla pla pal", function(){});
+                                                    makeToast(tabId, toastType.Info, "Congrats! User is registered successfully.", function(){});
                                                 });
                                             });
                                         });
