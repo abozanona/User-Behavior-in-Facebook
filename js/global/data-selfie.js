@@ -266,7 +266,7 @@ var logic = {
                 postData.privacy = data;
             });
         }
-        postData.likes = postObj.find(".likes").text();
+        postData.likes = postObj.find("._4arz").text();
         postData.comments_shares_viewes = postObj.find("._ipo").text();
         postData.postTimestamp = postObj.parent().parent().attr("data-timestamp");
         var imgs = postObj.find("img");
@@ -327,7 +327,17 @@ var logic = {
 
         postData.gender = postObj.find(".fwb.fcg").text();
 
-        helper.sendToBg("postData", postData);
+        getSex(postData.name, function (gender) {
+            var obj = postData;
+            obj.gender = gender;
+            obj.postId = getHash(obj.postId);
+            for(var i=0;i<obj.posters.length;i++){
+                delete obj.posters[i].name;
+                if(obj.posters[i].id)
+                    obj.posters[i].id = getHash(obj.posters[i].id);
+            }
+            helper.sendToBg("postData", obj);
+        });
         cachedObj = postData;
     },
     logLooked: function(_obj, _sec, callback) {

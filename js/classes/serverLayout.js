@@ -102,7 +102,7 @@ function submitStudyResults(results, fn) {
 }
 
 function dataFromGenderURL(name, fn){
-    console.log(name);
+
     name = name.split(" ")[0];
     name = name.replace(/\W/g, '');
     if(name == "")

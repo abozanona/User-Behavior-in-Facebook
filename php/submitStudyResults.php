@@ -1,5 +1,5 @@
 <?php
-require 'database.php';
+$conn = new mysqli('****', '****', '****', '****');
 
 if(!isset($_POST['clientid'], $_POST['data']))
 	die();

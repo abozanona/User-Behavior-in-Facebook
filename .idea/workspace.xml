@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cb986706-bfab-43b0-bbf6-c6a9a805c4ed" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/background.js" afterPath="$PROJECT_DIR$/js/background.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/classes/serverLayout.js" afterPath="$PROJECT_DIR$/js/classes/serverLayout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/classes/theCollector.js" afterPath="$PROJECT_DIR$/js/classes/theCollector.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/global/data-selfie.js" afterPath="$PROJECT_DIR$/js/global/data-selfie.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data-selfie.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data-selfie.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/global/data-selfie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+            <state relative-caret-position="169">
+              <caret line="268" column="41" lean-forward="false" selection-start-line="268" selection-start-column="41" selection-end-line="268" selection-end-column="41" />
               <folding>
                 <element signature="n#!!block;n#startTutorial#0" expanded="false" />
               </folding>
@@ -30,11 +31,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/background.js">
+      <file leaf-file-name="jquery.json-viewer.execute.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theCollector.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/classes/theCollector.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="85" column="54" lean-forward="true" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serverLayout.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/classes/serverLayout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="generalFunctions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/global/generalFunctions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -52,10 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkbox</find>
-      <find>&lt;a</find>
-      <find>1.1</find>
-      <find>‏‏حاز ‏منشورك‏ في ‏‎</find>
       <find>pagelet_dock</find>
       <find>id=&quot;pagelet_dock&quot;</find>
       <find>riteCssClass&quot;: &quot;sx_f0e66b&quot;, &quot;</find>
@@ -82,6 +109,10 @@
       <find>typing</find>
       <find>helper.sendToBg(</find>
       <find>savelo</find>
+      <find>&quot;postData&quot;</find>
+      <find>SJCL.</find>
+      <find>getha</find>
+      <find>&quot;dd&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;#baffb2&quot;,</replace>
@@ -127,11 +158,11 @@
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/js/global/toastr.js" />
         <option value="$PROJECT_DIR$/js/global/generalFunctions.js" />
-        <option value="$PROJECT_DIR$/js/classes/serverLayout.js" />
-        <option value="$PROJECT_DIR$/js/classes/theCollector.js" />
         <option value="$PROJECT_DIR$/js/enum/user.js" />
         <option value="$PROJECT_DIR$/js/background.js" />
+        <option value="$PROJECT_DIR$/js/classes/serverLayout.js" />
         <option value="$PROJECT_DIR$/js/global/data-selfie.js" />
+        <option value="$PROJECT_DIR$/js/classes/theCollector.js" />
       </list>
     </option>
   </component>
@@ -165,6 +196,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,14 +232,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="back&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;data&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;jsonv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/jsonViewer.html&#10;bac&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;gene&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;ser&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;int&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/intro.js&#10;toast&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/toastr.js&#10;only me&#9;null&#9;null&#10;man&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/manifest.json&#10;abou&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;faq&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/faq.html&#10;settings&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/settings.html&#10;sett&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;pop&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/popup.html&#10;dat&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;user&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;setting&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;serv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;use&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;the&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;theco&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;thec&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;se&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;server&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;col&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;gen&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;priv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/php/checkprivacy.php&#10;ba&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;abo&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;backgr&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;da&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/data-selfie.js&#10;ge&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/generalFunctions.js&#10;activ&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/classes/activityLog.js&#10;setti&#9;FILE&#9;file:///home/nullsky/Desktop/extention/settings.js&#10;mani&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;ma&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;m&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;coll&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js" />
+    <property name="SearchEverywhereHistoryKey" value="json&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/jquery.json-viewer.execute.js&#10;se&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;gener&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;data&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;back&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;jsonv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/jsonViewer.html&#10;bac&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;gene&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;ser&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;int&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/intro.js&#10;toast&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/toastr.js&#10;only me&#9;null&#9;null&#10;man&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/manifest.json&#10;abou&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;faq&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/faq.html&#10;settings&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/settings.html&#10;sett&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;pop&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/popup.html&#10;dat&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;user&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;setting&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;serv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;use&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;the&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;theco&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;thec&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;server&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;col&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;gen&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;priv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/php/checkprivacy.php&#10;ba&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;abo&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;backgr&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;da&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/data-selfie.js&#10;ge&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/generalFunctions.js&#10;activ&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/classes/activityLog.js&#10;setti&#9;FILE&#9;file:///home/nullsky/Desktop/extention/settings.js&#10;mani&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;ma&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;m&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;coll&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -334,11 +365,12 @@
       <workItem from="1514345217635" duration="2174000" />
       <workItem from="1514754817997" duration="1854000" />
       <workItem from="1515503568577" duration="7128000" />
+      <workItem from="1515583551040" duration="2694000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153724000" />
+    <option name="totallyTimeSpent" value="156418000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -514,13 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/activityLog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-729">
@@ -582,7 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1870">
           <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -590,18 +614,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="55" column="7" lean-forward="false" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/wamp64/www/x/1عائلة البرمجة.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17952">
-          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/wamp64/www/x/1عائلة البرمجة.html" />
     <entry file="file://$PROJECT_DIR$/js/global/toastr.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -616,19 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding>
-            <element signature="e#1572#1578#0" expanded="true" />
-            <element signature="e#1578#1584#0" expanded="true" />
-            <element signature="e#1584#1590#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/theCollector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="254" column="11" lean-forward="true" selection-start-line="254" selection-start-column="11" selection-end-line="254" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -656,37 +658,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/serverLayout.js">
+    <entry file="file://$PROJECT_DIR$/js/background.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/global/generalFunctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="248" column="9" lean-forward="false" selection-start-line="248" selection-start-column="9" selection-end-line="248" selection-end-column="9" />
+        <state relative-caret-position="204">
+          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/background.js">
+    <entry file="file://$PROJECT_DIR$/js/classes/serverLayout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="458">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/global/data-selfie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+        <state relative-caret-position="169">
+          <caret line="268" column="41" lean-forward="false" selection-start-line="268" selection-start-column="41" selection-end-line="268" selection-end-column="41" />
           <folding>
             <element signature="n#!!block;n#startTutorial#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/theCollector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="85" column="54" lean-forward="true" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

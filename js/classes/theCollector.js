@@ -77,7 +77,7 @@ function collectLikedPages(fn){
                             var page_id=responceprocess[temp_counter_var].replace('data-profileid=\\\"',"");
                             userLikes.push({
                                 "id" : getHash(page_id),
-                                "likeTime" : "dd"
+                                //"likeTime" : "dd"
                             });
                         }
                     }
