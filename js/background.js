@@ -55,13 +55,15 @@ function checkSendingData() {
         }
 
         var daysDifference = timestampDifference(today, time).days;
-        if(daysDifference>0){
+        if(daysDifference>4){
             getSingleValue("isAutoSave", function(isAutoSave){
                 if(isAutoSave){
                     collectResult(function (result) {
                         submitStudyResults(result, function () {
-                            ;
-                        })
+                            clearCashAfterSubmit(function () {
+
+                            });
+                        });
                     });
                 }
                 else{

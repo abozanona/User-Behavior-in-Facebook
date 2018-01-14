@@ -10,7 +10,9 @@ $(document).ready(function () {
                 var today=(+new Date());
                 setSingleValue("weekPeriod", today, function () {
                 });
-                alert("Data was sent to the server succ!");
+                clearCashAfterSubmit(function () {
+                    alert("Data was sent to the server succ!");
+                });
             });
         }
     });
@@ -21,9 +23,19 @@ $(document).ready(function () {
                     var today=(+new Date());
                     setSingleValue("weekPeriod", today, function () {
                     });
-                    alert("Data was sent to the server succ!");
+                    clearCashAfterSubmit(function () {
+                        alert("Data was sent to the server succ!");
+                    });
                 });
             }
+        });
+    });
+    $("#submitNotToday").click(function () {
+        var today=(+new Date());
+        setSingleValue("weekPeriod", today, function () {
+            clearCashAfterSubmit(function () {
+                alert("We won't send data about you today");
+            });
         });
     });
 });

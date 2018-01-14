@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cb986706-bfab-43b0-bbf6-c6a9a805c4ed" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/classes/serverLayout.js" afterPath="$PROJECT_DIR$/js/classes/serverLayout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/classes/theCollector.js" afterPath="$PROJECT_DIR$/js/classes/theCollector.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/global/data-selfie.js" afterPath="$PROJECT_DIR$/js/global/data-selfie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/background.js" afterPath="$PROJECT_DIR$/js/background.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/global/generalFunctions.js" afterPath="$PROJECT_DIR$/js/global/generalFunctions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js" afterPath="$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsonViewer.html" afterPath="$PROJECT_DIR$/jsonViewer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/submitStudyResults.php" afterPath="$PROJECT_DIR$/php/submitStudyResults.php" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,53 +21,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data-selfie.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/global/data-selfie.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="268" column="41" lean-forward="false" selection-start-line="268" selection-start-column="41" selection-end-line="268" selection-end-column="41" />
-              <folding>
-                <element signature="n#!!block;n#startTutorial#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="jquery.json-viewer.execute.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="63" />
+            <state relative-caret-position="136">
+              <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="theCollector.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/classes/theCollector.js">
+      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="85" column="54" lean-forward="true" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+            <state relative-caret-position="152">
+              <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serverLayout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/classes/serverLayout.js">
+      <file leaf-file-name="jsonViewer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jsonViewer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generalFunctions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/global/generalFunctions.js">
+      <file leaf-file-name="background.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/background.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="16" />
+            <state relative-caret-position="294">
+              <caret line="167" column="31" lean-forward="false" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -147,8 +137,6 @@
         <option value="$PROJECT_DIR$/js/classes/settings.js" />
         <option value="$PROJECT_DIR$/faq.html" />
         <option value="$PROJECT_DIR$/popup.js" />
-        <option value="$PROJECT_DIR$/jsonViewer.html" />
-        <option value="$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js" />
         <option value="$PROJECT_DIR$/js/enum/message.js" />
         <option value="$PROJECT_DIR$/js/global/intro.js" />
         <option value="$PROJECT_DIR$/popup.html" />
@@ -157,12 +145,15 @@
         <option value="C:/wamp64/www/x/1عائلة البرمجة.html" />
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/js/global/toastr.js" />
-        <option value="$PROJECT_DIR$/js/global/generalFunctions.js" />
         <option value="$PROJECT_DIR$/js/enum/user.js" />
-        <option value="$PROJECT_DIR$/js/background.js" />
         <option value="$PROJECT_DIR$/js/classes/serverLayout.js" />
         <option value="$PROJECT_DIR$/js/global/data-selfie.js" />
         <option value="$PROJECT_DIR$/js/classes/theCollector.js" />
+        <option value="$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js" />
+        <option value="$PROJECT_DIR$/jsonViewer.html" />
+        <option value="$PROJECT_DIR$/php/submitStudyResults.php" />
+        <option value="$PROJECT_DIR$/js/background.js" />
+        <option value="$PROJECT_DIR$/js/global/generalFunctions.js" />
       </list>
     </option>
   </component>
@@ -228,6 +219,11 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="global" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="extention" type="b2602c69:ProjectViewProjectNode" />
+              <item name="extention" type="462c0819:PsiDirectoryNode" />
+              <item name="php" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -237,7 +233,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="json&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/jquery.json-viewer.execute.js&#10;se&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;gener&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;data&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;back&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;jsonv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/jsonViewer.html&#10;bac&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;gene&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;ser&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;int&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/intro.js&#10;toast&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/toastr.js&#10;only me&#9;null&#9;null&#10;man&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/manifest.json&#10;abou&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;faq&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/faq.html&#10;settings&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/settings.html&#10;sett&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;pop&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/popup.html&#10;dat&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;user&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;setting&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;serv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;use&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;the&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;theco&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;thec&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;server&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;col&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;gen&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;priv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/php/checkprivacy.php&#10;ba&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;abo&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;backgr&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;da&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/data-selfie.js&#10;ge&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/generalFunctions.js&#10;activ&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/classes/activityLog.js&#10;setti&#9;FILE&#9;file:///home/nullsky/Desktop/extention/settings.js&#10;mani&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;ma&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;m&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;coll&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js" />
+    <property name="SearchEverywhereHistoryKey" value="back&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;mani&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/manifest.json&#10;gen&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;json&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/jsonViewer.html&#10;jsonvie&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/jquery.json-viewer.execute.js&#10;se&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;gener&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;data&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;jsonv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/jsonViewer.html&#10;bac&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;gene&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/generalFunctions.js&#10;ser&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;int&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/intro.js&#10;toast&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/toastr.js&#10;only me&#9;null&#9;null&#10;man&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/manifest.json&#10;abou&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;faq&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/faq.html&#10;settings&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/settings.html&#10;sett&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;pop&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/popup.html&#10;dat&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/global/data-selfie.js&#10;user&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;setting&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/settings.js&#10;serv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;use&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/enum/user.js&#10;the&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;theco&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;thec&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;server&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/serverLayout.js&#10;col&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js&#10;priv&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/php/checkprivacy.php&#10;ba&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;abo&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/aboutus.html&#10;backgr&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/background.js&#10;da&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/data-selfie.js&#10;ge&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/global/generalFunctions.js&#10;activ&#9;FILE&#9;file:///home/nullsky/Desktop/extention/js/classes/activityLog.js&#10;setti&#9;FILE&#9;file:///home/nullsky/Desktop/extention/settings.js&#10;ma&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;m&#9;FILE&#9;file:///home/nullsky/Desktop/extention/manifest.json&#10;coll&#9;FILE&#9;file://C:/Users/Nullsky/Desktop/extention/js/classes/theCollector.js" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -366,11 +362,12 @@
       <workItem from="1514754817997" duration="1854000" />
       <workItem from="1515503568577" duration="7128000" />
       <workItem from="1515583551040" duration="2694000" />
+      <workItem from="1515897115466" duration="1349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156418000" />
+    <option name="totallyTimeSpent" value="157767000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,7 +384,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -399,6 +395,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -501,13 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/submitStudyResults.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -628,20 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jsonViewer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/enum/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -654,37 +630,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36482">
           <caret line="2146" column="41" lean-forward="false" selection-start-line="2146" selection-start-column="40" selection-end-line="2146" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/global/generalFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/classes/serverLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/global/data-selfie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
+        <state relative-caret-position="0">
           <caret line="268" column="41" lean-forward="false" selection-start-line="268" selection-start-column="41" selection-end-line="268" selection-end-column="41" />
           <folding>
             <element signature="n#!!block;n#startTutorial#0" expanded="false" />
@@ -694,16 +645,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/global/jquery.json-viewer.execute.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="63" />
+        <state relative-caret-position="136">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/submitStudyResults.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/global/generalFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="285" column="43" lean-forward="false" selection-start-line="285" selection-start-column="43" selection-end-line="285" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/classes/serverLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="93" column="12" lean-forward="true" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/classes/theCollector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="85" column="54" lean-forward="true" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+        <state relative-caret-position="17">
+          <caret line="85" column="54" lean-forward="false" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonViewer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="167" column="31" lean-forward="false" selection-start-line="167" selection-start-column="31" selection-end-line="167" selection-end-column="31" />
           <folding />
         </state>
       </provider>

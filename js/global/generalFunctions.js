@@ -280,3 +280,14 @@ function collectResult(fn){
         });
     });
 }
+function clearCashAfterSubmit(fn) {
+    setSingleValue("actions", false, function () {
+        setSingleValue("apps", false, function () {
+            setSingleValue("devices", false, function () {
+                setSingleValue("activityLog", [], function () {
+                    fn();
+                });
+            });
+        });
+    });
+}
