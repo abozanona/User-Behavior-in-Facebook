@@ -265,7 +265,7 @@ function collectResult(fn){
                         for(var i=0;i<users.length;i++)
                             (function (userId) {
                                 var userObject={id:userId, requests:undefined}
-                                getSingleValue("requests" + userId, function (requests) {
+                                getSingleValue("requests"/* + userId*/, function (requests) {
                                     userObject.requests=requests;
                                     result.actions.push(userObject);
                                     usersCount--;
@@ -281,9 +281,9 @@ function collectResult(fn){
     });
 }
 function clearCashAfterSubmit(fn) {
-    setSingleValue("actions", false, function () {
-        setSingleValue("apps", false, function () {
-            setSingleValue("devices", false, function () {
+    setSingleValue("requests"/* + userID*/, [], function () {
+        setSingleValue("apps", [], function () {
+            setSingleValue("devices", [], function () {
                 setSingleValue("activityLog", [], function () {
                     fn();
                 });
