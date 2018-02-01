@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Facebook Privacy Watcher & Analyzer - Collected data</title>
+    <link rel="shortcut icon" href="static/img/logo_icon.ico" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/my-style.css">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar-light">
+
+    <section id="collected-data-section">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 id="downlo-intro-part" class="display-4">Collected data</h1>
+          <p class="lead">Your data is stored in JSON format.
+          Below are some examples. In the plugin, you can see all data we collect about you (with a description for the items).
+          </p>
+          <div class="row"> 
+            <div class="col-sm">
+              <hr class="my-4">
+              <code>
+                id: "f4505c0810aff7f2c8514997a9ebdce3706f"
+              </code>
+              <p>This is a sample of user id which is hashed using SHA-256 algorithm.</p>
+              <hr class="my-4">
+              <code>
+                action: <br>
+                  type: "contentLoaded"
+              </code>
+              <p>This is an action collected which indicates that some content loaded in your page.</p>
+              <hr class="my-4">
+              <code>
+                action: <br>
+                type: "closeWindow", <br>
+                data: { <br>
+                timestamp: 1515784683185, <br>
+                sessionId: 855, <br>
+                remainingTabs: 1 <br>
+                }
+              </code>
+              <p>This is an action collected which indicates that you closed a Facebook tap.</p>
+              <hr class="my-4">
+              <code>
+                gender: { <br>
+                  age: "July 26, 1990", <br>
+                  gender: "Male" <br>
+                  }, <br>
+                  country: "Mexico", <br>
+                  language: "en", <br>
+              </code>
+              <p>This is some profile data collected with hashed user id.</p>
+              <hr class="my-4">
+              <p class="lead">To see what is collected about you, just click on <i>Collected data</i> in the plugin choices after installation.</p>
+            </div>
+            <div class="col-sm">
+              <hr class="my-4">
+              <code>
+                  action: <br>
+                  type: "openPage", <br>
+                  data: { <br>
+                  type: "/profile_book.php:timeline", <br>
+                  gender: 1 <br>
+                  }
+              </code>
+              <p>This is an action collected which indicates that you open a Facebook page.</p>
+              <hr class="my-4">
+              <code>
+                  apps: <br>
+                  appId: "1d923919ec5b869e202c1aae806cbe17ba606", <br>
+                  permissions: [ <br>
+                  { <br>
+                  name: "public_profile" <br>
+                  }, <br>
+                  { <br>
+                  name: "email", <br>
+                  ischecked: "checked" <br>
+                  } <br>
+                  ]
+              </code>
+              <p>This is an application (With hashed id) collected which indicates that you give it a permission to access your public profile and your email.</p>
+              <hr class="my-4">
+              <code>
+                  devices: [ <br>
+                  {  <br>
+                  os: "Windows PC", <br>
+                  location: "c9ff4748f4c4ccc26c55085da1ba7cffbd8eee", <br>
+                  browser: "Chrome", <br>
+                  time: "Active now" <br>
+                  },
+              </code>
+              <p>This is a logged device collected which indicates that you use it to open your Facebook account.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <div class="card-footer"><small class="text-muted">Copyright &copy; 2018 by Research team.</small>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
