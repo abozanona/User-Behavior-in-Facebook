@@ -119,6 +119,7 @@ chrome.webRequest.onCompleted.addListener(function(info) {
 
 var isCollected = false;
 chrome.tabs.onHighlighted.addListener(function(){
+    checkActivityLogChanges();//todo debugging
 
     var today=(+new Date());
     isFacebookNormalTab(function(isTrue, tabId) {

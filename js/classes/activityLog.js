@@ -1,18 +1,20 @@
 function checkActivityLogChanges() {
     var today=(+new Date());
     getSingleValue("activityLogTime", function(time){
+        console.log('started');
         if(time==null){
             setSingleValue("activityLogTime", today, function () {
 
             });
             return;
         }
-
         var daysDifference = timestampDifference(today, time).days;
-        if(daysDifference>1){
+        //todo for debugging if(daysDifference>1){
+        if(daysDifference<1){
             var lastCheck=new Date();
             lastCheck.setDate(lastCheck.getDate() - daysDifference);
             for (var d = lastCheck; d <= new Date(); d.setDate(d.getDate() + 1)) {
+                console.log("The time", d);
                 getActivityLogData(d);
             }
             setSingleValue("activityLogTime", today, function () {
@@ -37,10 +39,17 @@ function getActivityLogData(date){
         for(var i=0;i<log_filters.length;i++){
             (function (date, log_filter) {
                 date = new Date(date);
+                var date2 = new Date(date);
+                date2.setDate(date2.getDate() - 1);
                 $.get("https://mbasic.facebook.com/100010475160558/allactivity?timeend="
-                    + date.getTime() / 1000 + "&timestart="
-                    + date.getTime() / 1000 + "&log_filter="
+                    + parseInt(date.getTime() / 1000) + "&timestart="
+                    + parseInt(date2.getTime() / 1000) + "&log_filter="
                     + log_filter , function (data) {
+
+                    console.log("https://mbasic.facebook.com/100010475160558/allactivity?timeend="
+                        + parseInt(date.getTime() / 1000) + "&timestart="
+                        + parseInt(date2.getTime() / 1000) + "&log_filter="
+                        + log_filter);
 
                     data=$(data)
                         .find("#" + "tlRecentStories_" + parseMonth(date.getMonth()) +"_" + parseDay(date.getDate()) +"_" + parseYear(date.getFullYear()))//tlRecentStories_{month}_{day}_{year}
@@ -74,6 +83,10 @@ function anonymizeLinks(links){
     return links;
 }
 function storeActivityLogResult(log_filter, timestamp, activitiesNumber, links) {
+    console.log('log_filter', log_filter);
+    console.log('timestamp', timestamp);
+    console.log('activitiesNumber', activitiesNumber);
+    console.log('links', links);
     links = anonymizeLinks(links);
     getUserID(function (userId) {
         userId=getHash(userId);
