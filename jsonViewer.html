@@ -1,0 +1,437 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Facebook Privacy Watcher & Analyzer</title>
+    <meta charset="utf-8" />
+
+    <script src="js/global/generalFunctions.js"></script>
+    <script src="js/classes/serverLayout.js"></script>
+    <script src="js/global/jquery.min.js"></script>
+    <link href="js/global/css/jquery.json-viewer.css" type="text/css" rel="stylesheet" />
+
+    <style type="text/css">
+        body {
+            margin: 0 100px;
+            font-family: sans-serif;
+        }
+        textarea#json-input {
+            width: 100%;
+            height: 200px;
+        }
+        pre#json-renderer {
+            border: 1px solid #aaa;
+            padding: 0.5em 1.5em;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style>
+        .btn-lg.round {
+            border-radius: 24px;
+            margin-bottom: 10px;
+        }
+        body{
+            width:850px;
+            margin: 30px;
+        }
+        .left-separator{
+            border-left: solid 2px #CCCCCC;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="img/ppulogo.png" style="width:50px;height:50px"/>
+        <img src="img/ger-uni-logo.png" style="width:50px;height:50px"/>
+        <img src="img/projectlogo.png" style="width:50px;height:50px"/>
+        
+        <h4 style="display: inline">FPWA Research Project</h4><hr/>
+    </div>
+
+    <h1>Collected data</h1><hr/>
+    <h3>We collected the following data about you so far:</h3>
+    <p>If there are unclear fields, click <a href="#jsonFieldsExplanation">here</a>.</p>
+    <pre id="json-renderer"></pre>
+    <script src="js/global/jquery.json-viewer.js"></script>
+    <script src="js/global/jquery.json-viewer.execute.js"></script>
+    <br>
+    <h3>Do you want to send it to us?</h3>
+    <a id="submit" href="#" class="btn btn-success round">This time only</a> &nbsp;&nbsp;&nbsp;
+    <a id="submitAlways" href="#" class="btn btn-success round">Always</a> &nbsp;&nbsp;&nbsp;
+    <a id="submitNotToday" href="#" class="btn btn-success round">Don't send and clear</a> &nbsp;&nbsp;&nbsp;
+    <br>
+    <br>
+    <div id="jsonFieldsExplanation">
+        <h2>Fields explanation</h2>
+
+        <h4>Actions fields</h4>
+        <code>type: "contentLoaded"</code> // some content loaded from your facebook page. <br>
+        <br>
+        <code>type: "saveLooked"</code> // You looked for a post from your facebook page. <br>
+        <code> data: {</code>  // Data stored about this post. <br>
+        <code>duration: 3,</code>  // you looking for 3 seconds to this post. <br>
+        <code>timestamp: "2018-01-29T22:53:38+02:00",</code>  // This is the looking time. <br>
+        <code>gender: 3,</code>  // When it's 3, then the gender of the post owner is unkonow, maybe it's a page...etc. <br>
+        <code>back_time: 1517259221670</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        <code>type: "blur",</code>  // You are switched from Facebook to another website tab. <br>
+        <code>data: {</code>  // Data stored about this post. <br>
+        <code>timestamp: 1517259221678,</code>  // This is the time of this action. <br>
+        <code>sessionId: 61,</code>  // This is a random number generated to distinguish this session. <br>
+        <code>remainingTabs: 1,</code>  // One tab of Facebook was opened then. <br>
+        <code>back_time: 1517259221679</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        <code>type: "focus",</code>  // You entered a Facebook tab. <br>
+        <code>data: {</code>  // Data stored about this post. <br>
+        <code>timestamp: 1517259221678,</code>  // This is the time of this action. <br>
+        <code>sessionId: 61,</code>  // This is a random number generated to distinguish this session. <br>
+        <code>remainingTabs: 1,</code>  // One tab of Facebook was opened then. <br>
+        <code>back_time: 1517259221679</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        <code>type: "postData",</code>  // A data about post that you saw it during your browsing.<br>
+        <code>data: {</code>  // Data stored about this post. <br>
+        <code>postId: "09664731125f4b6bca7f7b54dbfc917ff882ec95a4950daeac632b507b7af60a",</code>  // This is a hashed id for this post for distinguishing. <br>
+        <code>postTimestamp: "1517257731",</code>  // This is the publishing time for post. <br>
+        <code>pageType: "/home.php:topnews",</code>  // The post appeared in your newsfeed. <br>
+        <code>viewTime: 1517259253388,</code>  // The time when you view this post. <br>
+        <code>gender: 3,</code>  // The post owner unknown. <br>
+        <code>likes: "24",</code>  // The number of post likes. <br>
+        <code>comments_shares_viewes: "5",</code>  // The post comments/shares/views <br>
+        <code>posters: [</code>  <br>
+        <code>{</code>  <br>
+        <code>type: "user",</code>  // The post owner type is a user. <br>
+        <code>id: "ebfc0cb088268503375735780624d818394762c611b313c06a3378d3de4f1b9d"</code>  // A hashed id for the post owner. <br>
+        <code>}</code>  <br>
+        <code>],</code>  <br>
+        <code>postImg: 1,</code>  // The post contains an image. <br>
+        <code>postDesc: [</code>  // Some post description. <br>
+        <code>32</code>  // The post text contains 32 word. <br>
+        <code>],</code>  <br>
+        <code>origLink: [],</code>  // If the post contains a link. <br>
+        <code>origDesc: [],</code>  // A description for the attached link if exists. <br>
+        <code>suggested: [</code>  // If the post is a promoted or suggested from Facebook or not. <br>
+        <code>0,</code>  // If the post is promoted. <br>
+        <code>0,</code>  // If the post is suggested. <br>
+        <code>],</code>  <br>
+        <code>duration: 0,</code>  // You didn't spent a time viewing this post. <br>
+        <code>timestamp: 1517259253388,</code>  // This is the time of this action. <br>
+        <code>back_time: 1517259221679</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code>  <br>
+        <br>
+        <code>type: "action",</code>  // An action occurred. <br>
+        <code>data: {</code>  // Data stored about this action. <br>
+        <code>class: "UFILikeLink _4x9- _4x9_ _48-k",</code>  // This means that you liked a post. <br>
+        <code>timestamp: 1517259257972,</code>  // This is the time of this action. <br>
+        <code>pageType: "/home.php:topnews",</code>  // This means that the liked post is from the main page. <br>
+        <code>sessionId: 61,</code>  // This is a random number generated to distinguish this session. <br>
+        <code>back_time: 1517259257973</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        <code>type: "typing",</code>  // You are writing something. <br>
+        <code>data: {</code>  // Data stored about this action. <br>
+        <code>type: 1,</code>  // Chatting with a friend. <br>
+        <code>time: 1517259275015,</code>  // Chatting time. <br>
+        <code>with: https://www.facebook.com/messages/t/1409301662439851,</code>  // ************* <br>
+        <code>gender: 2,</code>  // If gender = 2, then Female. <br>
+        <code>back_time: 1517259275020</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        <code>type: "action",</code>  // An action occurred. <br>
+        <code>data: {</code>  // Data stored about this action. <br>
+        <code>class: "_3olu _3olv close button _4vu4",</code>  // Classes names used to identify the action. <br>
+        <code>data: {</code>  // Data stored about this action. <br>
+        <code>tooltipPosition: "above",</code>  // *********** <br>
+        <code>hover: "tooltip",</code>  // *********** <br>
+        <code>ft: "[object Object]"</code>  // *************** <br>
+        <code>},</code>  <br>
+        <code>aria_label: "Press Esc to close",</code>  // You closed something ( e.g. Chatting window). <br>
+        <code>timestamp: 1517259257972,</code>  // This is the time of this action. <br>
+        <code>pageType: "/home.php:topnews",</code>  // This means that the liked post is from the main page. <br>
+        <code>sessionId: 61,</code>  // This is a random number generated to distinguish this session. <br>
+        <code>back_time: 1517259286912</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        <code>type: "action",</code>  // An action occurred. <br>
+        <code>data: {</code>  // Data stored about this action. <br>
+        <code>class: "jewelButton _3eo8",</code>  // Classes names used to identify the action. <br>
+        <code>data: {</code>  // Data stored about this action. <br>
+        <code>tooltipDelay: "abd3f2ed90f684b305ed7632ee24e58ed439de</code>  // You clicked on something from the top bar in Facebook. <br>
+        <code>tooltipContent: "Messages",</code>  // You clicked on Messages. <br>
+        <code>hover: "tooltip",</code>  // The kind of click (something from the top bar) . <br>
+        <code>gt: "[object Object]"</code>  // *********** <br>
+        <code>},</code>  <br>
+        <code>timestamp: 1517259287785,</code>  // This is the time of this action. <br>
+        <code>pageType: "/home.php:topnews",</code>  // The position of the action is in main page. <br>
+        <code>sessionId: 61,</code>  // This is a random number generated to distinguish this session. <br>
+        <code>back_time: 1517259286912</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        <code>type: "closeWindow",</code>  // The action is closing a Facebook tab. <br>
+        <code>data: {</code>  // Data stored about this action. <br>
+        <code>timestamp: 1517259301852,</code>  // This is the time of this action. <br>
+        <code>sessionId: 61,</code>  // This is a random number generated to distinguish this session. <br>
+        <code>remainingTabs: 1,</code>  // One tab of Facebook was opened then. <br>
+        <code>back_time: 1517259301853</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        <code>type: "openPage",</code>  // The action is opening a Facebook tab. <br>
+        <code>data: {</code>  // Data stored about this action. <br>
+        <code>type: "/home.php:topnews",</code>  // Means the opened page is from the header (top bar) of Facebook. <br>
+        <code>androidurl: "fb://group/05867f1d66b2ba6d7347f323179e8691821c375c1",</code>  // the opened tab was a group with it's hash value. <br>
+        <code>back_time: 1517259306619</code>  // The time for this action (Another value of time like timestamp).<br>
+        <code>}</code> <br>
+        <br>
+        
+        <hr>
+
+        <h4>Devices fields</h4>
+        <code>user: "f4505c0810aff7f2c8514997a9ebdf363adea79b6b8f3aff99ac6b575ce3706f",</code>  // Hashed user id. <br>
+        <code>devices: [</code>  // The devices that you are using to access Facebook. <br>
+        <code>{</code> <br>
+        <code>os: "Windows PC",</code>  // A device with Windows operating system. <br>
+        <code>location: "a15c8d255a39136127c02283d72f296554bbf36b89e49c8b50deb6f39ccd7f10",</code>  // The location of this operation. <br>
+        <code>browser: "Chrome",</code>  // The used browser is Chrome. <br>
+        <code>time: "Active now"</code>  // You are using this device now. <br>
+        <code>},</code> <br>
+        <code>{</code> <br>
+        <code>os: "Linux",</code>  // A device with Linux operating system. <br>
+        <code>location: "a15c8d255a39136127c02283d72f296554bbf36b89e49c8b50deb6f39ccd7f10",</code>  // The location of this operation. <br>
+        <code>browser: "Chrome",</code>  // The used browser is Chrome. <br>
+        <code>time: "about an hour ago"</code>  // This operation was before an hour ago. <br>
+        <code>}</code> <br>
+        
+        <hr>
+        
+        <h4>Applications fields</h4>
+        <code>apps: [</code>  // Your linked apps with your Facebook accounts. <br>
+        <code>{</code> <br>
+        <code>appId: "d9779d064bf4a588850d966c7e69736f0773654bdb05a720da46275585e8c28e",</code>  // Hashed app id. <br>
+        <code>permissions: [</code>  // The permissions that this app accessed.<br>
+        <code>{</code> <br>
+        <code>name: "public_profile"</code>  // Your public data on your profile.<br>
+        <code>},</code> <br>
+        <code>{</code> <br>
+        <code>name: "email",</code>  // Your email.<br>
+        <code>ischecked: "checked"</code>  // This permission was checked. <br>
+        <code>},</code> <br>
+        <code>{</code> <br>
+        <code>"user_friends",</code>  // Your friends. <br>
+        <code>ischecked: "checked"</code>  // This permission was checked. <br>
+        <code>},</code> <br>
+        <code>{</code> <br>
+        <code>name: "user_photos",</code>  // Your profile photos. <br>
+        <code>ischecked: "checked"</code>  // This permission was checked. <br>
+        <code>},</code> <br>
+        <code>]</code> <br>
+
+        <!--
+        type: "action",
+        data: {
+        data: {
+        hovercardPreferMoreContentShow: "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        hovercard: "/ajax/hovercard/user.php?id=f0afdc0e0228cc149d82e310890edd3bb5d980e8f1a399d6d4843b2de9ef5380&extragetparams=%7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451B%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09hc_location%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09%4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fceA%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09profile_browser%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09%7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451D",
+        gt: "[object Object]"
+        },
+        timestamp: 1517259315438,
+        pageType: "/groups/profile.php:feed",
+        session: 474,
+        back_time: 1517259315440
+        }
+
+
+        type: "photos_snowlift",
+        data: {
+        timestampStart: 1517259317491,
+        timestampEnd: 1517259320649,
+        sessionId: 474,
+        back_time: 1517259320651
+        }
+
+
+        type: "action",
+        data: {
+        class: "_53td",
+        data: {
+        lynxUri: https://l.facebook.com/l.php?u=https%4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fceA%d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35F%d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35Finstagram.com%d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35FAmiiina.BensLi&h=ATPpHXe7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683jdTef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39dGDef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39dpKDef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39dLmxHcPOXBmV2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3GQPEuFbwX4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8avz-_sGrcnOref2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39dpcmYmQCKfpBcLbMibXexa88a7902cb4ef697ba0b6759c50e8c10297ff58f942243de19b984841bfe1f73rC4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8aKzOKWJwsMef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39dTFynG_ZmiNRICs8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61Vo_Fe7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683MzYhYd4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35xOclbbaOJ7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451zef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39dTfvfxBe5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9q6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4bYmxdHgGq,
+        lynxMode: "asynclazy"
+        },
+        timestamp: 1517259327890,
+        pageType: "/profile_book.php:timeline",
+        session: 474,
+        back_time: 1517259327892
+        }
+
+
+
+        type: "action",
+        data: {
+        class: " UFICommentActorName",
+        data: {
+        hovercard: "/ajax/hovercard/hovercard.php?id=dcef404296f84ccf68b5893537f9f08f5ddf2455ef3956356082e6efaa688f90&extragetparams=%7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451B%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09is_public%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09%4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fceAfalse%d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35C%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09hc_location%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09%4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fceA%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09group%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09%d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35C%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09directed_target_id%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09%4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fceA%ad78e2db76cb6bdf6f594e417a6498f206b7e7b9ecaa95a06541bc8a4932f114%785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09%7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451D",
+        ft: "[object Object]"
+        },
+        timestamp: 1517259390731,
+        pageType: "/groups/profile.php:feed",
+        session: 497,
+        back_time: 1517259390735
+        }
+
+
+        type: "photos_snowlift",
+        data: {
+        timestampStart: 1517259395741,
+        timestampEnd: 1517259399507,
+        sessionId: 497,
+        back_time: 1517259399517
+        }
+
+
+        type: "action",
+        data: {
+        class: "_5dec _xcx",
+        data: {
+        ft: "[object Object]",
+        renderLocation: "newsstand",
+        ploi: https://scontent.fjrs4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce-6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b.fna.fbcdn.net/v/t6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b.5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9-19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7/e4eea983596298524d3f4eaeb2bfe68fb7da69963f455651d68b2b04c224fc0e_9ade71544ca0f85bed375a3a78d744b829bfdd078ab759fbc113b943d39ebdd6_484e989f980779a521ed7e25dfe808d7e2e8416955e052efb5914c08de103f17_n.jpg?oh=cce2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3dfe6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4beb6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4bdbce7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683c7c0b9ac27bab4f51a6893794c2cb90dea7735c6c1fa49afe458bc47ed9ea3805dfb5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9b51054b8a03281fd02034378a5570ae0c970fb1d5d64246e0eb981481c228c108add4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35&oe=ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39dADA8252e1d5fe9ebc0ed2b5785997788d45ddda1747f234b6c7f87d5271ca9630c0,
+        referrerid: "dcef404296f84ccf68b5893537f9f08f5ddf2455ef3956356082e6efaa688f90"
+        },
+        timestamp: 1517259403579,
+        pageType: "/profile_book.php:timeline",
+        session: 497,
+        back_time: 1517259403580
+        }
+
+
+        type: "action",
+        data: {
+        class: "_5f0v f_click",
+        data: {
+        testid: "non_react_mark_all_as_read_link"
+        },
+        timestamp: 1517259417358,
+        pageType: "/profile_book.php:timeline",
+        session: 497,
+        back_time: 1517259417360
+        }
+
+
+        
+
+
+        appId: "c9a97b7a4137c5b6b7fdc5bc36442d4111d9e613c1c1392e95f40734a0ffa7fd",
+        permissions: [
+        {
+        name: "public_profile"
+        },
+   
+        {
+        name: "email",
+        ischecked: "checked"
+        }
+        ]
+
+
+
+        appId: "7415390e67b2a206e7c36ddd3fb1d90e23d4fc6e846bdc1d745b45dcaa17ce79",
+        permissions: [
+        {
+        name: "public_profile"
+        },
+        {
+        name: "user_friends",
+        ischecked: "checked"
+        },
+
+        {
+        name: "publish_actions",
+        ischecked: "checked"
+        },
+        {
+        ischecked: "checked"
+        }
+        ]
+
+
+        appId: "7bc27593ca206f3e1d7ca2368ad7c2cfcb1a010112701a1f706fe8e4c77c9531",
+        permissions: [
+        {
+        name: "public_profile"
+        },
+        {
+        name: "user_birthday",
+        ischecked: "checked"
+        },
+        {
+        name: "user_work_history",
+        ischecked: "checked"
+        },
+        {
+        name: "user_education_history",
+        ischecked: "checked"
+        },
+        {
+        name: "user_hometown",
+        ischecked: "checked"
+        },
+        {
+        name: "user_location",
+        ischecked: "checked"
+        },
+        {
+        name: "user_website",
+        ischecked: "checked"
+        },
+        {
+        name: "user_about_me",
+        ischecked: "checked"
+        },
+        {
+        name: "email",
+        ischecked: "checked"
+        }
+        ]
+
+
+
+        aboutInfo: [
+        {
+        section_name: "#work",
+        numberOfItems: 1
+        },
+
+
+        {
+        section_name: "#basic-info",
+        numberOfItems: 5
+        },
+
+
+
+
+        id: "5fc5a0ec042598a3d3303b46205be962b8adbadb515fea1f9fc5b3ebaafb2cd7",
+        membersNumber: {
+        field1: "Friends (38)",
+        field2: "Other Members (67)"
+        },
+        photos: "60",
+        files: "5",
+        privacy: "Secret Group"
+        },
+
+
+        {
+        id: "03a37365f92b5e232eea5ec810c729565a4ef66bbc09cc8304b47579f4b58a2d",
+        mutual_friends: 1,
+        gender: 2
+        },
+
+    -->
+
+
+    </div>
+</body>
+</html>

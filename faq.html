@@ -21,15 +21,18 @@
 	<a href="popup.html" class="btn btn-primary btn-sm round" style="position: fixed; bottom: 10px;left: 10px"><-</a>
 	<div>
 		<img src="img/ppulogo.png" style="width:50px;height:50px"/>
+        <img src="img/ger-uni-logo.png" style="width:50px;height:50px"/>
+        <img src="img/projectlogo.png" style="width:50px;height:50px"/>
 		<h4 style="display: inline">FPWA Research Project</h4><hr/>
 	</div>
 	<div class="container-fluid">
 		<h3>What are FPA and FPW?</h3>
 		<br>
 
-		<p><b>FPWA</b> (<i>Facebook Privacy Watcher and Analyzer</i>) is a browser extension (i.e. plug-in) for Google Chrome.</p>
-		<p>It collects data about the privacy settings as well as about behavior of Facebook users.</p>
-		<p>It also helps users to customize their privacy settings on Facebook.</p>
+		<p> <strong>FPWA</strong> (<i>Facebook Privacy Watcher and Analyzer</i>)
+			is a browser extension (i.e. plug-in) for Google Chrome.
+			It collects data about the privacy settings as well as about behavior of Facebook users.
+			It also helps users to customize their privacy settings as well as to know their behavior on Facebook.</p>
 
 		<hr/>
 		<h3>Which data is collected by FPWA?</h3>
@@ -67,47 +70,68 @@
 
 		<hr/>
 
-		<h3>How do we preserve your privacy</h3>
+		<h3>How do we preserve your privacy?</h3>
 		<br>
-		<p>Your data will be collected without your identity (e.g. we know that "<i>someone</i>" liked some post,
-			but we cannot know who did that).</p>
+		<p>Your data will be collected without your identity
+			(e.g. we know that "<i>someone</i>" liked some post, but we cannot know who did that).</p>
 		<p>Furthermore, your data is accumulated with the data of other participants.
-		The collected data will be encoded using hash algorithms (i.e. Your data is not reversible)
-		which means that the database of FPWA plugin will contain just the hashed data.</p>
+			The collected data will be encoded using hash algorithms (i.e. your data is not reversible)
+			which means that the database of FPWA plugin will contain just the hashed data.</p>
+			<p>Our source code is available <a href="https://github.com/abozanona/User-Behavior-in-Facebook" target="_blank">online</a>.</p>
 
 		<hr/>
 
 		<h3>Why do we collect the aforementioned data about you and other volunteers?</h3>
 		<br>
-		<p>We need (and use) your data only in academic/research purposes.
-			In particular, the objectives of our study is twofold:</p>
-		<li><i><b>Private Data Exposure in Facebook</b></i>
-			<p>The huge set of functionalities Facebook offering to their users
-				attracts lots of people from different age ranges to join Facebook.</p>
-				<p>This will make them vulnerable to different kinds risks. Among these, privacy. Protecting personal
-				data means a lot to most Facebook users. Even though most of them do not know how to set the right way.</p>
-				<p>In this research, we will use the plugin FPWA that will help them set their privacy settings
-				in a way that limit private data exposure.</p></li>
-		<li><i><b>Understanding User Behavior in Facebook</b></i>
-			<p>The behavior of Facebookers is critical for Facebook company itself,
-				and for the users too. For example, the user might be eager	to know statistics about his/her usage of Facebook
-				because he could spend a lot of his time on OSNs 	at the expense of his duty and responsibilities in the life.</p>
-				<p>These statistics may include: the most Facebook functionalities used, the time user spend on Facebook,
-				or even the time user spend on a specific functionality, and much more of statistics that can be measured.</p> </li>
+
+		<p>We need (and use) your data only for academic/research purposes.
+			In particular the objective of our study is twofold:</p>
+
+		<p><strong>First, <i>evaluating data exposure in Facebook. </i> </strong> <br>
+			The huge set of functionalities Facebook offering to their users attracts lots
+			of people from different age rages to join Facebook. This will make them
+			vulnerable to different kinds of risks. Protecting personal data means a lot to most Facebook users.
+			Therefore, we provide a simple (color-based) mechanism that will help our volunteers to set their
+			privacy settings in a way that limit private data exposure.</p>
+
+		<p><strong>Second, <i>understanding user behavior in Facebook. </i> </strong> <br>
+			User behavior in Facebook is a critical issue for different parties. For example, authors of alternative online
+			social networks architectures to make well-founded design choices, and Facebook itself,
+			because understanding user behavior impacts their design choices in Facebook, and help them provide
+			the most appropriate functions and features to that user. In addition to that, user behavior in
+			Facebook may concern the user itself, for example, the user might be eager
+			to know statistics about his/her usage of Facebook because he could spend a lot
+			of his time on Facebook at the expense of his duty and responsibilities in the
+			life. These statistics may include: the most Facebook functionalities used,
+			the time user spend on Facebook, or even the time user spend on a specific
+			functionality, and much more of statistics that can be measured.</p>
+
+		<p><strong>Note:</strong> Our study is an extension of a <a href="https://fba.ppu.edu/previous_work.html" target="_blank">previous work</a>.</p>
 
 		<hr/>
 		<h3>How can you benefit from FPWA?</h3>
 		<br>
-		<p><b>First</b> of all, FPWA helps you to better customize your privacy settings in Facebook.</p>
-		<p>By using <i>Coloring Posts</i> option, the user will notice that his/her posts on newsfeed in the main page of Facebook
-			will be colored with a specific colors depending on the type of post privacy from the publisher,
-			this will increase the user attention about his privacy level and with whom he/she sharing his/her daily activities and news.</p>
-		<p><b>Second</b> FPWA gives you information about your behavior on Facebook. It also compares your behavior with other users.
-			<i>Next updates via Chrome Store will contain more advantages for the end user.</i></p>
+		<p>First of all, FPWA helps you to better customize your privacy settings in Facebook.
+			It provides an innovative interface to overlook and change privacy on Facebook easily.
+			The basic idea is that people can gather information more easily when it is associated with colors.
+			In the profile page of Facebook and were linked with colors.
+			The idea is inspired from <a href="http://www.daniel-puscher.de/fpw/" target="_blank">FPW</a>.</p>
+					
+		<p>Second, once we collect sufficient amount of data about you and other volunteers,
+			you will be able to see information and statistics about your behavior in Facebook.
+			Furthermore, you can compare your behavior to the behavior of other volunteers.
+			<i>In addition, more features are being developed.</i></p>
 		<hr/>
+
+		<h3>How do we store the collected data?</h3>
+		<br>
+		<p class="card-text"> We use <a href="https://www.json.org/" target="_blank">JSON</a> file format,
+			for more details click <strong><a href="https://fba.ppu.edu/collected_data_fields.html" target="_blank">here</a></strong>.</p>
+		
+		<hr/>
+		
 		<p>To visit our website, click <a href="https://fba.ppu.edu/" target="_blank">here</a>.</p>
-		<p>To visit the website of old two plugins, click here: <a href="http://www.daniel-puscher.de/fpw/" target="_blank">FPW</a>,
-		<a href="http://www.daniel-puscher.de/fpa/" target="_blank">FPA</a>.</p>
+		<p>To see the <a href="https://fba.ppu.edu/previous_work.html" target="_blank">previous work</a>.</p>
 	</div>
 </body>
 </html>
