@@ -1,21 +1,17 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 $conn = new mysqli('****', '****', '****', '****');
 
+echo "hi\n";
 if(!isset($_POST['clientid'], $_POST['data']))
 	die();
+echo "hi2\n\";
 $clientid=$_POST['clientid'];
 $data=$_POST['data'];
+echo $_POST['clientid'] . "\n";
 $clientid = mysqli_real_escape_string($con, $clientid);
 $data = mysqli_real_escape_string($con, $data);
 
-//$sql = "SELECT * FROM studyresults where clientid='$clientid'";
-//$result = $conn->query($sql);
-//$count = mysqli_num_rows($result);
-//if($count==0){
-	$sql = "INSERT INTO studyresults(clientid,data) VALUES ('$clientid','$data')";
-	$result = $conn->query($sql);
-//}
-//else{
-//	$sql = "UPDATE studyresults SET data='$data' WHERE clientid = '$clientid'";
-//	$result = $conn->query($sql);
-//}
+$sql = "INSERT INTO studyresults(clientid,data) VALUES ('$clientid','$data')";
+$result = $conn->query($sql);
+echo '<pre>', print_r($result), '</pre>', "\n";

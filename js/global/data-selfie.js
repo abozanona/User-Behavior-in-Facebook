@@ -267,7 +267,17 @@ var logic = {
             });
         }
         postData.likes = postObj.find("._4arz").text();
+        postData.likes = postData.likes.match(/\d/);
+        if(postData.likes)
+            postData.likes=postData.likes[0];
+        else
+            postData.likes=0;
         postData.comments_shares_viewes = postObj.find("._ipo").text();
+        postData.comments_shares_viewes = postData.comments_shares_viewes.match(/\d/);
+        if(postData.comments_shares_viewes)
+            ;
+        else
+            postData.comments_shares_viewes=[0,0];
         postData.postTimestamp = postObj.parent().parent().attr("data-timestamp");
         var imgs = postObj.find("img");
         if (postObj.find("video").length > 0) {
@@ -410,7 +420,12 @@ var looked = {
                 //console.log("looked forloop found post");
 
                 infocusId = posts[i].id;
-                var infocusEl = $("#" + infocusId);
+                try {
+                    var infocusEl = $("#" + infocusId);
+                }
+                catch (ex){
+                    continue;
+                }
                 infocusEl.addClass("highlighted");
                 posts.not(infocusEl).removeClass("highlighted");
 
@@ -625,20 +640,31 @@ var typed = {
                     else if($(e.target).closest(".fbNubFlyoutFooter ._mh6").length>0)
                     {
                         getSex($(e.target).closest(".fbNubFlyoutInner").find(".fbNubFlyoutTitlebar .titlebarText").text(), function (gender) {
+                            var _with = $(e.target).closest(".fbNubFlyoutInner").find(".fbNubFlyoutTitlebar .titlebarText").attr("href");
+                            _with = _with.replace(/(\d+)/g, function (match, p, replacer){
+                                return getHash(p);
+                            });
                             helper.sendToBg("typing", {
                                 type: typingTypes.chattingWithUser,
                                 time: +new Date(),
-                                with: $(e.target).closest(".fbNubFlyoutInner").find(".fbNubFlyoutTitlebar .titlebarText").attr("href"),
+                                with: _with,
                                 gender: gender
                             });
                         });
                     }
                     else if($(e.target).closest(".UFIAddCommentInput").length>0)
                     {
+                        //todo to FIX later
+                        /*
+                        var _with = $(e.target).closest(".userContentWrapper").find(".fbNubFlyoutTitlebar .titlebarText").attr("href");
+                        _with = _with.replace(/(\d+)/g, function (match, p, replacer){
+                            return getHash(p);
+                        });
+                        */
                         helper.sendToBg("typing", {
                             type: typingTypes.makingComment,
                             time: +new Date(),
-                            with: $(e.target).closest(".fbNubFlyoutInner").find(".fbNubFlyoutTitlebar .titlebarText").attr("href")
+                            //with: _with
                         });
                     }
                     else if($(e.target).closest("#feedx_container").length>0)

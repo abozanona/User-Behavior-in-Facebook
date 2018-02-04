@@ -25,11 +25,15 @@ function checkPrivacy(_privacy, fn) {
         ]
     };
     (function (_privacy) {
+        if(!_privacy)
+            return;
+        _privacy = _privacy.toLowerCase();
         getLanguage(function (lang) {
             if(lang && privacyRes[lang]){
                 var isFound = false;
                 for(var i=0;i<4;i++) {
-                    if (privacyRes[lang][i].indexOf(_privacy) != -1) {
+                    var mtch= privacyRes[lang][i].toLowerCase();
+                    if (mtch.indexOf(_privacy) != -1 || _privacy.indexOf(mtch) != -1) {
                         fn(i);
                         isFound = true;
                     }
@@ -61,24 +65,19 @@ function getPrivacyColor(privacy, fn) {
     });
 }
 
-
-
-function sendDataAttribute(_class, data){
-    $.get(server + "dataAttributesCollector.php?class=" + _class + "&data=" + data, function (data) {
-
-    });
-}
-
-
-
-function subscribe(email, fn) {
-    $.get(server + "subscribe.php?email=" + email, function (data) {
-        fn();
-    });
-}
-
 function submitStudyResults(results, fn) {
     chrome.storage.sync.get('userid', function(items) {
+        var useToken = function(userid) {
+            console.log("here");
+            $.post(server + "submitStudyResults.php",
+                {
+                    clientid: userid,
+                    data: JSON.stringify(results)
+                }
+            ).done(function (data) {
+                fn();
+            });
+        };
         var userid = items.userid;
         if (userid) {
             useToken(userid);
@@ -86,16 +85,6 @@ function submitStudyResults(results, fn) {
             userid = getRandomToken();
             chrome.storage.sync.set({userid: userid}, function() {
                 useToken(userid);
-            });
-        }
-        function useToken(userid) {
-            $.post(server + "submitStudyResults.php",
-                {
-                    clientid: userid,
-                    data: results
-                }
-            ).done(function () {
-                fn();
             });
         }
     });

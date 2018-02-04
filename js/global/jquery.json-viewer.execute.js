@@ -1,6 +1,12 @@
 var result = undefined;
 $(document).ready(function () {
 
+    getSingleValue("yourLastChoice", function (data) {
+        if(data)
+            $('#lastchoice').html(data);
+        else
+            $('#lastchoice').text('');
+    });
     collectResult(function (result) {
         $('#json-renderer').jsonViewer(result, {collapsed: true,withQuotes: false});
     });
@@ -11,7 +17,11 @@ $(document).ready(function () {
                 setSingleValue("weekPeriod", today, function () {
                 });
                 clearCashAfterSubmit(function () {
-                    alert("Data was sent to the server succ!");
+                    alert("Data were sent to the server successfully. Thanks.");
+                    location.reload();
+                });
+                setSingleValue("yourLastChoice", "Your last choice was: <i>This time only</i>", function () {
+
                 });
             });
         }
@@ -24,7 +34,11 @@ $(document).ready(function () {
                     setSingleValue("weekPeriod", today, function () {
                     });
                     clearCashAfterSubmit(function () {
-                        alert("Data was sent to the server succ!");
+                        alert("Data were sent to the server successfully. Thanks.");
+                        location.reload();
+                    });
+                    setSingleValue("yourLastChoice", "Your last choice was: <i>Submit always</i>", function () {
+
                     });
                 });
             }
@@ -34,7 +48,11 @@ $(document).ready(function () {
         var today=(+new Date());
         setSingleValue("weekPeriod", today, function () {
             clearCashAfterSubmit(function () {
-                alert("We won't send data about you today");
+                alert("We won't send data about you today.");
+                location.reload();
+            });
+            setSingleValue("yourLastChoice", "Your last choice was: <i>Don't send and clear</i>", function () {
+
             });
         });
     });

@@ -247,41 +247,26 @@ function getLanguage(fn){
 }
 
 function collectResult(fn){
-    result={users: undefined, actions: [], apps:undefined, devices:undefined, activityLog:undefined};
+    result={users: [], actions: [], apps:[], devices:[], activityLog:[]};
     getSingleValue("users", function (users) {
         getSingleValue("apps", function (apps) {
             getSingleValue("devices", function (devices) {
                 getSingleValue("activityLog", function (activityLog) {
-                    result.users = users;
-                    result.apps=apps;
-                    result.devices=devices;
-                    result.activityLog=activityLog;
-                    var ids=[];
-                    if(users){
-                        for(var i=0;i<users.length;i++) {
-                            ids.push(users[i].id);
-                        }
-                        var usersCount=users.length;
-                        for(var i=0;i<users.length;i++)
-                            (function (userId) {
-                                var userObject={id:userId, requests:undefined}
-                                getSingleValue("requests"/* + userId*/, function (requests) {
-                                    userObject.requests=requests;
-                                    result.actions.push(userObject);
-                                    usersCount--;
-                                    if(!usersCount){
-                                        fn(result);
-                                    }
-                                });
-                            })(ids[i]);
-                    }
+                    getSingleValue("requests", function (requests) {
+                        result.users = users;
+                        result.apps=apps;
+                        result.devices=devices;
+                        result.activityLog=activityLog;
+                        result.actions = requests;
+                        fn(result);
+                    });
                 });
             });
         });
     });
 }
 function clearCashAfterSubmit(fn) {
-    setSingleValue("requests"/* + userID*/, [], function () {
+    setSingleValue("requests", [], function () {
         setSingleValue("apps", [], function () {
             setSingleValue("devices", [], function () {
                 setSingleValue("activityLog", [], function () {

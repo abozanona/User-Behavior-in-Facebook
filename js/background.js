@@ -14,6 +14,8 @@ chrome.runtime.onInstalled.addListener(function(details){
     setSingleValue("installWelcome", true, function () {
         chrome.tabs.create({url: chrome.extension.getURL('popup.html')});
     });
+    setSingleValue("isFBWEnabled", true, function (e) {
+    });
 });
 chrome.tabs.onUpdated.addListener(function (tab) {
     chrome.tabs.query({}, function(foundTabs) {
@@ -89,19 +91,17 @@ chrome.runtime.onMessage.addListener(
         if(!request.type){
             return;
         }
+        request.back_time = +(new Date());
         //action, reaction, openPage, blur, focus, closeWindow, photos_snowlift
-        getUserID(function (userID) {
-            userID = getHash(userID);
-            getSingleValue("requests" + userID,function (e) {
-                if(!e){
-                    e=[];
-                }
-                e.push(request);
-                setSingleValue("requests" + userID, e, function () {
-                    //console.log(e);
-                })
-            });
-        })
+        getSingleValue("requests",function (e) {
+            if(!e){
+                e=[];
+            }
+            e.push(request);
+            setSingleValue("requests", e, function () {
+
+            })
+        });
     }
 );
 
