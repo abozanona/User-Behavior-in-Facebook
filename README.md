@@ -1,32 +1,29 @@
 # Welcome to FPWA
 ## Facebook Privacy Watcher & Analyzer
 
-### What is FPWA?
-FPWA (Facebook Privacy Watcher and Analyzer) is a browser extension (i.e. plug-in) for Google Chrome.
-It collects data about the privacy settings as well as about behavior of Facebook users.
-It also helps users to customize their privacy settings on Facebook.
+## What is FPWA?
+FPWA (Facebook Privacy Watcher and Analyzer) is a browser extension (i.e. plug-in) for Google Chrome. It collects data about the privacy settings as well as about behavior of Facebook users. It also helps users to customize their privacy settings as well as to know their behavior on Facebook.
 
 ## About us
-### Which universities working on this study?
-In this study, two universities the researchers belongs to:
+### Our work is a cooperation between the [Department of Computer Engineering](https://citce.ppu.edu/en/departments) - [Palestine Polytechnic University](https://www.ppu.edu), and the [Chair of Privacy and Security](https://tu-dresden.de/ing/informatik/sya/ps/studium?set_language=en) - [TU Dresden](https://tu-dresden.de/)
 
-* Palestine Polytechnic University
-https://ppu.edu
+## Contact us:
 
-* Technische Universität Dresden
-https://tu-dresden.de
+### Development team:
+*Abdulhamead Abuzanunah - abozanona@gmail.com
 
-### Who we are?
-We are a research group in computer field, our group:
+*Meqdad darweesh - meqdad.darweesh@gmail.com
 
-*PhD. Hani Salah - hani@ppu.edu
+*Hamzah Bahar - hamzah.bahar@outlook.com  
 
-*PhD. Thomas Paul - thomas.paul@cs.tu-darmstadt.de
 
-*PhD. Thorsten Sturfe - thorsten.sturfe@tu-dresden.de
+### For press and research - related questions:
+*Prof. Dr. Thorsten Sturfe - thorsten.strufe@tu-dresden.de
 
-*Eng. Abdulhamead Abuzanunah - abozanona@gmail.com
+*Dr. Hani Salah - hani@ppu.edu 
 
-*Eng. Meqdad darweesh - 112085@ppu.edu.ps
+*Dr. Thomas Paul - thomas@thomas-paul.de 
 
-*Eng. Hamzah Bahar - 141063@ppu.edu.ps
+
+### For more details, visit us on our website:
+https://fba.ppu.edu/
