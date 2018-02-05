@@ -5,9 +5,10 @@ function collectFriendsID(fn){
     var friendsCountInList=10;
     function getNewList(startindex){
         startindex++;
+        console.log(startindex);
         $.get("https://mbasic.facebook.com/friends/center/friends/?ppk=" + startindex, function( data ) {
             //alert(startindex);
-            if (data.match(/uid=\d+/g) && startindex<2) {
+            if (data.match(/uid=\d+/g) && startindex<299) {
                 data = $(data).find("table").not(':first').not(':last');
                 // var friendid_array = data.match(/uid=\d+/g);
                 // var mutualfriends_array = data.match(/bo bp">(.*?)<\/div><div class="bq">/g);
