@@ -17,7 +17,9 @@ chrome.runtime.onInstalled.addListener(function(details){
     setSingleValue("isFBWEnabled", true, function (e) {
     });
 });
+// listener when tabs updated
 chrome.tabs.onUpdated.addListener(function (tab) {
+    // counting number of facebook tabs after updating certain tab 
     chrome.tabs.query({}, function(foundTabs) {
         var count = 0;
         var ids = [];
@@ -31,6 +33,9 @@ chrome.tabs.onUpdated.addListener(function (tab) {
             chrome.tabs.sendMessage(ids[j], { tabsCount: count });
     });
 });
+
+
+    // counting number of facebook tabs after removing certain tab
 chrome.tabs.onRemoved.addListener(function (tab) {
     chrome.tabs.query({}, function(foundTabs) {
         var count = 0;
@@ -46,6 +51,7 @@ chrome.tabs.onRemoved.addListener(function (tab) {
     });
 });
 
+ 
 function checkSendingData() {
     var today=(+new Date());
     getSingleValue("weekPeriod", function(time){

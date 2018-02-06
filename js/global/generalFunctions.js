@@ -15,6 +15,7 @@ function openJSONViewer() {
     chrome.tabs.create({url: chrome.extension.getURL('jsonViewer.html')});
 }
 
+// check if the tab is facebook tab or not
 function isFacebookNormalTab(fn){
     chrome.tabs.getSelected(null, function (tab) {
         if(tab.incognito){
@@ -35,6 +36,8 @@ function isFacebookNormalTab(fn){
         }
     });
 }
+
+// geting hash of a string value.
 function getHash(string){
     var salt = "ABCD";
     string = string;// + salt;
@@ -75,6 +78,8 @@ function setSingleValue(key, value, fn){
         fn();
     });
 }
+
+// checking if the user is logged in or not
 function isUserLoggedIn(fn){
     getCookieValue("c_user", function (value) {
         if(value){
@@ -139,15 +144,19 @@ var toastType={
     Warning : "toastWarning",
     Error : "toastError"
 };
+
+// function to make toast message.
 function makeToast(tabId, toastType, msg, fn){
     msg=msg.replace(/"/g, '\\\"');
     try {
         chrome.tabs.executeScript(tabId, {code: 'try {' + toastType + '("' + msg + '");}catch (e) {}'}, fn());
     }
     catch (ex){
-        //Silence is gold :3
+        
     }
 }
+
+// fucntion to find the difference between two dates.
 function timestampDifference(date1,date2){
     var difference = new Date(date1).getTime() - new Date(date2).getTime();
 
@@ -170,6 +179,8 @@ function timestampDifference(date1,date2){
     };
 }
 
+
+// checking if an element is in an array or not.
 function isElementInArray(element, array) {
     if(array[element])
         return true;
@@ -218,12 +229,13 @@ function getRandomToken() {
     crypto.getRandomValues(randomPool);
     var hex = '';
     for (var i = 0; i < randomPool.length; ++i) {
-        hex += randomPool[i].toString(16);
+        hex += randomPool[i].toString(16);  
     }
     // E.g. db18458e2782b2b77e36769c569e263a53885a9944dd0a861e5064eac16f1a
     return hex;
 }
 
+// counting number of Facebook tabs.
 function facebookTabsNumber(fn) {
     chrome.tabs.query({}, function(foundTabs) {
         var count = 0;
@@ -234,6 +246,7 @@ function facebookTabsNumber(fn) {
     });
 }
 
+// getting the laguage of Facebook account
 function getLanguage(fn){
     $.get("https://www.facebook.com/settings", function( data ) {
         data=data.toString();
@@ -265,6 +278,7 @@ function collectResult(fn){
         });
     });
 }
+// clearing cache
 function clearCashAfterSubmit(fn) {
     setSingleValue("requests", [], function () {
         setSingleValue("apps", [], function () {

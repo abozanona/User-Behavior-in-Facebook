@@ -14,14 +14,15 @@ $(document).ready(function () {
         $("#onlyme").val(e[2]);
         $("#custom").val(e[3]);
         $("#unknown").val(e[4]);
-    });
+    }); 
+    // getting the value of the color enable checkbox
     getSingleValue("isFBWEnabled", function (e) {
         if(e)
             $("#isFBWEnabled").attr("checked", true);
         else
             $("#isFBWEnabled").attr("checked", false);
     });
-
+     // setting the value of color enable checkbox when it changed
     $("#isFBWEnabled").change(function() {
         var b=false;
         if($(this).is(":checked")) {
@@ -30,7 +31,8 @@ $(document).ready(function () {
         setSingleValue("isFBWEnabled", b, function () {
 
         });
-    });
+    });  
+    // user submition
     $("#submit").click(function() {
         var email=$("#email").val();
         subscribe(email, function () {
