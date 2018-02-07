@@ -10,7 +10,7 @@ function registerNewUser(tabId, shUID){
             readDevicesNumber();
         });
         makeToast(tabId, toastType.Info, "Collecting data: 2 of 10", function(){});
-        collectFriendsID(function(friendsArray){
+        collectAboutInfo(function(aboutInfoArray){
             makeToast(tabId, toastType.Info, "Collecting data: 3 of 10", function(){});
             collectLikedPages(function (pagesArray) {
                 makeToast(tabId, toastType.Info, "Collecting data: 4 of 10", function(){});
@@ -26,7 +26,7 @@ function registerNewUser(tabId, shUID){
                                     makeToast(tabId, toastType.Info, "Collecting data: 8 of 10", function(){});
                                     getDoB(function (DoB) {
                                         makeToast(tabId, toastType.Info, "Collecting data: 9 of 10", function(){});
-                                        collectAboutInfo(function(aboutInfoArray){
+                                        collectFriendsID(function(friendsArray){
                                             makeToast(tabId, toastType.Info, "Collecting data: 10 of 10", function () {
                                                 var user = makeUser(shUID, friendsArray, pagesArray, groupsArray, userGender, country, lang, DoB, aboutInfoArray);
                                                 existUser(user, function () {
