@@ -60,8 +60,8 @@ function checkSendingData() {
             return;
         }
 
-        var daysDifference = timestampDifference(today, time).days;
-        if(daysDifference>4){
+        var hoursDifference = timestampDifference(today, time).hours;
+        if(hoursDifference>20){
             getSingleValue("isAutoSave", function(isAutoSave){
                 if(isAutoSave){
                     collectResult(function (result) {
