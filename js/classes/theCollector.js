@@ -1,4 +1,6 @@
-//FIX check if facebook has changed their links
+//FIX check if facebook has changed their links 
+
+// collecting friends and mutual frinds id
 function collectFriendsID(fn){
     var friendsID=[];
     var startindex=-1;
@@ -62,6 +64,7 @@ function collectFriendsID(fn){
     getNewList(startindex);
 }
 
+// collecting id's of user liked pages
 function collectLikedPages(fn){
     var userLikes=[];
     var startindex=-70;
@@ -93,6 +96,7 @@ function collectLikedPages(fn){
     });
 }
 
+//collecting user's group
 function collectGroups(fn){
     var groupsID=[];
     $.get("https://www.facebook.com/bookmarks/groups/", function( htmlstring ) {
@@ -131,6 +135,7 @@ function collectGroups(fn){
     });
 }
 
+ // function to return members of a group 
 function getGroupMembersNumber(id, fn){
     $.get("https://m.facebook.com/groups/" + id + "?view=members", function(data){
         dataMatch=data.match(/_55wr\\">[^>]+\([\d,]+\)/g);
@@ -154,6 +159,8 @@ function getGroupMembersNumber(id, fn){
         }
     });
 }
+
+// function to get number of photos and files of a group member depending on its id
 function getPhotosNumberAndFilesNumber(id, fn){
     $.get("https://mbasic.facebook.com/groups/" + id + "?view=info", function(data){
         data = $(data);
@@ -163,6 +170,7 @@ function getPhotosNumberAndFilesNumber(id, fn){
         fn(id, photos, files, privacy);
     });
 }
+
 function getGender(name, fn){
 
     name = name.replace(/ /g, "%20");

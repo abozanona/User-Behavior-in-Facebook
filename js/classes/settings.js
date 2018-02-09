@@ -1,4 +1,6 @@
+// reading the apps of each user and add it to an array if not exist
 function readApps(){
+    // getting facebook page from which we can read apps. 
     $.get("https://mbasic.facebook.com/privacy/touch/apps/list/?tab=all", function(data){
         var finalResult = [];
         var finalLength;
@@ -54,7 +56,7 @@ function readApps(){
             })($(appsLinks[i]).attr("href"));
     });
 }
-
+// read os and browser used to access facebook in addition to location and time.
 function readDevicesNumber(){
     $.get("https://mbasic.facebook.com/settings/security_login/sessions/", function(data){
         var result=[];

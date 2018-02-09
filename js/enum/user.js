@@ -1,3 +1,4 @@
+// registering new user and showing the notifications that indicate the progress of collecting account info.
 function registerNewUser(tabId, shUID){
     var id=shUID;
 
@@ -9,7 +10,7 @@ function registerNewUser(tabId, shUID){
             readDevicesNumber();
         });
         makeToast(tabId, toastType.Info, "Collecting data: 2 of 10", function(){});
-        collectFriendsID(function(friendsArray){
+        collectAboutInfo(function(aboutInfoArray){
             makeToast(tabId, toastType.Info, "Collecting data: 3 of 10", function(){});
             collectLikedPages(function (pagesArray) {
                 makeToast(tabId, toastType.Info, "Collecting data: 4 of 10", function(){});
@@ -25,7 +26,7 @@ function registerNewUser(tabId, shUID){
                                     makeToast(tabId, toastType.Info, "Collecting data: 8 of 10", function(){});
                                     getDoB(function (DoB) {
                                         makeToast(tabId, toastType.Info, "Collecting data: 9 of 10", function(){});
-                                        collectAboutInfo(function(aboutInfoArray){
+                                        collectFriendsID(function(friendsArray){
                                             makeToast(tabId, toastType.Info, "Collecting data: 10 of 10", function () {
                                                 var user = makeUser(shUID, friendsArray, pagesArray, groupsArray, userGender, country, lang, DoB, aboutInfoArray);
                                                 existUser(user, function () {
@@ -43,6 +44,7 @@ function registerNewUser(tabId, shUID){
         });
     });
 }
+// a function to make user
 function makeUser(id, friends, pages, groups, gender, country, language, DoB, aboutInfo/*, messages/*, actions, reactions, sessions, posts, events*/){
     return {
         id: id,
@@ -59,6 +61,7 @@ function makeUser(id, friends, pages, groups, gender, country, language, DoB, ab
 function existUser(user, fn){
     console.log(user);
     getSingleValue("users", function(e){
+        // if there are no users.
         if(e==null)
         {
             e=[];
@@ -80,6 +83,8 @@ function existUser(user, fn){
         fn();
     });
 }
+
+// check if user exist or not.
 function isUserExists(shUID, fn){
     getSingleValue("users", function(e){
         if(e==null)
@@ -98,6 +103,8 @@ function isUserExists(shUID, fn){
         fn(true);
     });
 }
+
+// function to block certain user
 function blockUser(shUID, fn){
     getSingleValue("blockedUsers", function(e){
         if(e==null)
@@ -119,6 +126,8 @@ function blockUser(shUID, fn){
         fn();
     });
 }
+
+// check if user blocked or not.
 function isUserBlocked(shUID, fn) {
     getSingleValue("blockedUsers", function(e){
         if(e==null)

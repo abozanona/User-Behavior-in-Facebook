@@ -3,8 +3,13 @@
     "short_name": "FPWA.",
     "description": "Facebook privacy watcher and analyser.",
     "name": "Facebook Privacy Watcher & Analyzer",
+<<<<<<< HEAD
     "description": "FPWA(Facebook Privacy Watcher and Analyzer)is a Chrome plug-in to help Facebookers manage their privacy & understang their behavior.",
     "version": "2.0",
+=======
+    "version" : "3.0",
+    "description": "FPWA(Facebook Privacy Watcher and Analyzer)is a Chrome plug-in to help Facebookers manage their privacy & understang their behavior.",
+>>>>>>> f47987ed7e4a975d0495850a744f516b4da18cea
 
     "browser_action": {
         "default_icon": "icon16.png",
