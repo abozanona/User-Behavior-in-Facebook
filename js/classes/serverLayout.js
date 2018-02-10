@@ -6,6 +6,11 @@ var privacy={
     custom: 3,
     unknown: 4
 };
+var GENDER = {
+    MALE: 1,
+    FEMALE: 2,
+    UNKNOWN: 3
+};
 function checkPrivacy(_privacy, fn) {
     // $.get(server + "checkprivacy.php?q=" + privacy, function (data) {
     //     return data;
@@ -68,7 +73,6 @@ function getPrivacyColor(privacy, fn) {
 function submitStudyResults(results, fn) {
     chrome.storage.sync.get('userid', function(items) {
         var useToken = function(userid) {
-            console.log("here");
             $.post(server + "submitStudyResults.php",
                 {
                     clientid: userid,
@@ -89,6 +93,16 @@ function submitStudyResults(results, fn) {
         }
     });
 }
+function reportError(err) {
+    $.post(server + "submitError.php",
+        {
+            clientid: userid,
+            data: err
+        }
+    ).done(function (data) {
+
+    });
+}
 
 function dataFromGenderURL(name, fn){
 
@@ -99,13 +113,20 @@ function dataFromGenderURL(name, fn){
         fn(GENDER.UNKNOWN);
         return;
     }
-    $.get("https://api.genderize.io/?name=" + name, function (data) {
-        if(data.gender == "male")
-            fn(GENDER.MALE);
-        else if(data.gender == "female")
-            fn(GENDER.FEMALE);
-        else
-            fn(GENDER.UNKNOWN);
+    $.ajax({
+        url: "https://api.genderize.io/?name=" + name,
+        type: 'GET',
+        success: function(data){
+            if(data.gender == "male")
+                fn(GENDER.MALE);
+            else if(data.gender == "female")
+                fn(GENDER.FEMALE);
+            else
+                fn(GENDER.UNKNOWN);
+        },
+        error: function(data) {
+            fn(-1);
+        }
     });
 }
 

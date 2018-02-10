@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Facebook Privacy Watcher & Analyzer</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<style>
-		.btn-lg.round {
-			border-radius: 24px;
-			margin-bottom: 10px;
-		}
-		body{
-			width:650px;
-			margin: 30px;
-		}
-		.left-separator{
-			border-left: solid 2px #CCCCCC;
-		}
-	</style>
-</head>
-<body>
-	<div>
-		<img src="img/ppulogo.png" style="width:50px;height:50px"/>
-        <img src="img/ger-uni-logo.png" style="width:50px;height:50px"/>
-        <img src="img/projectlogo.png" style="width:50px;height:50px"/>
-		<h4 style="display: inline">FPWA Research Project</h4><hr/>
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-6">
-				<a href="faq.html" class="btn btn-primary btn-lg round">F.A.Q</a><br/>
-				<a href="settings.html" class="btn btn-primary btn-lg round">Settings</a><br/>
-				<a href="jsonViewer.html" class="btn btn-primary btn-lg round" target="_blank">Collected data</a><br/>
-				<a href="aboutus.html" class="btn btn-primary btn-lg round">About Us</a><br/>
-			</div>
-			<div class="col-sm-6 left-separator text-center">
-				<br/><img src="img/fpw.jpg" class="img-rounded img-responsive" style="width: 200px"/><br/><br/>
-				<h6>Facebook Privacy Watcher & Analyzer</h6>
-				<a target="_blank" href="https://fba.ppu.edu/" class="btn btn-primary">Read more/Subscribe</a>
-			</div>
-		</div>
-	</div>
-</body>
+    <head>
+        <title>Facebook Privacy Watcher & Analyzer</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <style>
+            .btn-lg.round {
+                border-radius: 24px;
+                margin-bottom: 10px;
+            }
+
+            body {
+                width: 650px;
+                margin: 30px;
+            }
+
+            .left-separator {
+                border-left: solid 2px #CCCCCC;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img src="img/ppulogo.png" style="width:50px;height:50px"/>
+            <img src="img/ger-uni-logo.png" style="width:50px;height:50px"/>
+            <img src="img/projectlogo.png" style="width:50px;height:50px"/>
+            <h4 style="display: inline">FPWA Research Project</h4>
+            <hr/>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="faq.html" class="btn btn-primary btn-lg round">F.A.Q</a><br/>
+                    <a href="settings.html" class="btn btn-primary btn-lg round">Settings</a><br/>
+                    <a href="jsonViewer.html" class="btn btn-primary btn-lg round" target="_blank">Collected data</a><br/>
+                    <a href="aboutus.html" class="btn btn-primary btn-lg round">About Us</a><br/>
+                </div>
+                <div class="col-sm-6 left-separator text-center">
+                    <br/><img src="img/fpw.jpg" class="img-rounded img-responsive" style="width: 200px"/><br/><br/>
+                    <h6>Facebook Privacy Watcher & Analyzer</h6>
+                    <a target="_blank" href="https://fba.ppu.edu/" class="btn btn-primary">Read more/Subscribe</a>
+                </div>
+            </div>
+        </div>
+        <div id="installWelcome"
+             style="display: none;background: rgba(0,0,0,0.5);position: absolute;left: 0px;top: 0px;right: 0px;bottom: 0px;">
+            <div style="float: right">
+                <img src="arrow.png" style="width:400px;height: 400px;float: right"/>
+                <h3>You can always open this page <br/> from the extention icon above</h3>
+            </div>
+        </div>
+        <script src="js/global/jquery.min.js"></script>
+        <script src="js/global/generalFunctions.js"></script>
+        <script src="popup.js"></script>
+    </body>
 </html>

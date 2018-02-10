@@ -17,39 +17,50 @@ chrome.runtime.onInstalled.addListener(function(details){
 });
 // listener when tabs updated
 chrome.tabs.onUpdated.addListener(function (tab) {
-    // counting number of facebook tabs after updating certain tab 
+    // counting number of facebook tabs after updating certain tab
     chrome.tabs.query({}, function(foundTabs) {
-        var count = 0;
-        var ids = [];
-        for(var i=0;i<foundTabs.length;i++) {
-            if (foundTabs[i].url.indexOf(".facebook.com") != -1) {
-                count++;
-                ids.push(foundTabs[i].id);
+        try {
+            var count = 0;
+            var ids = [];
+            for (var i = 0; i < foundTabs.length; i++) {
+                if (foundTabs[i].url.indexOf(".facebook.com") != -1) {
+                    count++;
+                    ids.push(foundTabs[i].id);
+                }
             }
+            for (var j = 0; j < ids.length; j++)
+                chrome.tabs.sendMessage(ids[j], {tabsCount: count});
         }
-        for(var j=0;j<ids.length;j++)
-            chrome.tabs.sendMessage(ids[j], { tabsCount: count });
+        catch (ex){
+            reportError(ex);
+        }
     });
 });
 
 
     // counting number of facebook tabs after removing certain tab
 chrome.tabs.onRemoved.addListener(function (tab) {
-    chrome.tabs.query({}, function(foundTabs) {
-        var count = 0;
-        var ids = [];
-        for(var i=0;i<foundTabs.length;i++) {
-            if (foundTabs[i].url.indexOf(".facebook.com") != -1) {
-                count++;
-                ids.push(foundTabs[i].id);
+    try {
+
+        chrome.tabs.query({}, function (foundTabs) {
+            var count = 0;
+            var ids = [];
+            for (var i = 0; i < foundTabs.length; i++) {
+                if (foundTabs[i].url.indexOf(".facebook.com") != -1) {
+                    count++;
+                    ids.push(foundTabs[i].id);
+                }
             }
-        }
-        for(var j=0;j<ids.length;j++)
-            chrome.tabs.sendMessage(ids[j], { tabsCount: count });
-    });
+            for (var j = 0; j < ids.length; j++)
+                chrome.tabs.sendMessage(ids[j], {tabsCount: count});
+        });
+    }
+    catch (ex){
+        reportError(ex);
+    }
 });
 
- 
+
 function checkSendingData() {
     var today=(+new Date());
     getSingleValue("weekPeriod", function(time){
@@ -92,20 +103,26 @@ if (resetAll) {
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse){
-        if(!request.type){
-            return;
-        }
-        request.back_time = +(new Date());
-        //action, reaction, openPage, blur, focus, closeWindow, photos_snowlift
-        getSingleValue("requests",function (e) {
-            if(!e){
-                e=[];
-            }
-            e.push(request);
-            setSingleValue("requests", e, function () {
+        try {
 
-            })
-        });
+            if (!request.type) {
+                return;
+            }
+            request.back_time = +(new Date());
+            //action, reaction, openPage, blur, focus, closeWindow, photos_snowlift
+            getSingleValue("requests", function (e) {
+                if (!e) {
+                    e = [];
+                }
+                e.push(request);
+                setSingleValue("requests", e, function () {
+
+                })
+            });
+        }
+        catch (ex){
+            reportError(ex);
+        }
     }
 );
 
@@ -123,35 +140,40 @@ chrome.webRequest.onCompleted.addListener(function(info) {
 
 var isCollected = false;
 chrome.tabs.onHighlighted.addListener(function(){
-    checkActivityLogChanges();//todo debugging
+    try {
+        checkActivityLogChanges();//todo debugging
 
-    var today=(+new Date());
-    isFacebookNormalTab(function(isTrue, tabId) {
-        if(isTrue){
-            getSingleValue("lastCollect", function (time) {
-                if (time == null) {
-                    if (isCollected)
+        var today = (+new Date());
+        isFacebookNormalTab(function (isTrue, tabId) {
+            if (isTrue) {
+                getSingleValue("lastCollect", function (time) {
+                    if (time == null) {
+                        if (isCollected)
+                            return;
+                        isCollected = true;
+                        setSingleValue("lastCollect", today, function () {
+                            collectData();
+                        });
                         return;
-                    isCollected = true;
-                    setSingleValue("lastCollect", today, function () {
-                        collectData();
-                    });
-                    return;
-                }
+                    }
 
-                var timeDifference = timestampDifference(today, time).minutes;
-                if (timeDifference > 10) {
-                    if (isCollected)
+                    var timeDifference = timestampDifference(today, time).minutes;
+                    if (timeDifference > 10) {
+                        if (isCollected)
+                            return;
+                        isCollected = true;
+                        setSingleValue("lastCollect", today, function () {
+                            collectData();
+                        });
                         return;
-                    isCollected = true;
-                    setSingleValue("lastCollect", today, function () {
-                        collectData();
-                    });
-                    return;
-                }
-            });
-        }
-    });
+                    }
+                });
+            }
+        });
+    }
+    catch (ex){
+        reportError(ex);
+    }
 });
 
 function collectData(){
