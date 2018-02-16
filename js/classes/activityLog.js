@@ -54,7 +54,7 @@ function getActivityLogData(date) {
                             if (_link) {
 
                                 if (_link && _link.match(/^\/[a-zA-Z0-9.]+[\/]*$/)) {
-                                    links.push("USER_NAME");
+                                    //links.push("USER_NAME");
                                 }
                                 else {
                                     links.push(
