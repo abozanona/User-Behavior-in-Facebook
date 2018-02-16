@@ -7,7 +7,6 @@ function collectFriendsID(fn){
     var friendsCountInList=10;
     function getNewList(startindex){
         startindex++;
-        console.log(startindex);
         $.get("https://mbasic.facebook.com/friends/center/friends/?ppk=" + startindex, function( data ) {
             //alert(startindex);
             if (data.match(/uid=\d+/g) && startindex<299) {

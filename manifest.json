@@ -31,7 +31,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["http://*.facebook.com/*", "https://*.facebook.com/*", "http://localhost/*", "https://ask.fm/"],
+            "matches": ["http://*.facebook.com/*", "https://*.facebook.com/*"],
             "css": ["css/fblayer.css","css/introjs.css","js/global/css/jquery.json-viewer.css"],
             "js": [
                 "js/global/sjcl.js",

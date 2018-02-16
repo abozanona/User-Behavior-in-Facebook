@@ -1,7 +1,7 @@
 // getting chrome cookies 
 function getCookies(fn){
     chrome.tabs.getSelected(null, function (tab) {
-        chrome.cookies.getAll({"url":tab.url},function (cookie){
+        chrome.cookies.getAll({"url":"https://www.facebook.com/"},function (cookie){
             fn(cookie);
         });
     });

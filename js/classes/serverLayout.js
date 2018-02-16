@@ -70,37 +70,41 @@ function getPrivacyColor(privacy, fn) {
     });
 }
 
-function submitStudyResults(results, fn) {
-    chrome.storage.sync.get('userid', function(items) {
-        var useToken = function(userid) {
-            $.post(server + "submitStudyResults.php",
-                {
-                    clientid: userid,
-                    data: JSON.stringify(results)
-                }
-            ).done(function (data) {
-                fn();
-            });
-        };
-        var userid = items.userid;
+function getDeviceId(fn) {
+    getSingleValue('userid', function (userid) {
         if (userid) {
-            useToken(userid);
+            fn(userid);
         } else {
             userid = getRandomToken();
-            chrome.storage.sync.set({userid: userid}, function() {
-                useToken(userid);
+            setSingleValue('userid', userid, function() {
+                fn(userid);
             });
         }
     });
 }
-function reportError(err) {
-    $.post(server + "submitError.php",
-        {
-            clientid: userid,
-            data: err
-        }
-    ).done(function (data) {
 
+function submitStudyResults(results, fn) {
+    getDeviceId(function (userid) {
+        $.post(server + "submitStudyResults.php",
+            {
+                clientid: userid,
+                data: JSON.stringify(results)
+            }
+        ).done(function (data) {
+            fn();
+        });
+    });
+}
+function reportError(err) {
+    getDeviceId(function (userid) {
+        $.post(server + "submitError.php",
+            {
+                clientid: userid,
+                data: JSON.stringify(err)
+            }
+        ).done(function (data) {
+
+        });
     });
 }
 
