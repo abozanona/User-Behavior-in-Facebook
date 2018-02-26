@@ -61,8 +61,11 @@ chrome.tabs.onRemoved.addListener(function (tab) {
 
 function checkSendingData() {
     var today = (+new Date());
+    alert("today:" + new Date());
     getSingleValue("weekPeriod", function (time) {
+        alert("weekPeriod:" + new Date(time));
         if (time == null) {
+            alert("weekPeriod has never been set");
             setSingleValue("weekPeriod", today, function () {
 
             });
@@ -70,18 +73,22 @@ function checkSendingData() {
         }
 
         var hoursDifference = timestampDifference(today, time).hours;
-        if (hoursDifference > 20) {
+        alert("hoursDifference: " + hoursDifference);
+        if (hoursDifference > /*20*/4) {
             getSingleValue("isAutoSave", function (isAutoSave) {
                 if (isAutoSave) {
+                    alert("isAutoSave: yes");
                     collectResult(function (result) {
                         submitStudyResults(result, function () {
+                            alert("Data sent: yes");
                             clearCashAfterSubmit(function () {
-
+                                alert("clearCashAfterSubmit");
                             });
                         });
                     });
                 }
                 else {
+                    alert("isAutoSave: no");
                     openJSONViewer();
                 }
             });

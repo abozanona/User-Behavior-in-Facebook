@@ -84,13 +84,16 @@ function getDeviceId(fn) {
 }
 
 function submitStudyResults(results, fn) {
+    console.log("test", results);
     getDeviceId(function (userid) {
+        console.log("test", userid);
         $.post(server + "submitStudyResults.php",
             {
                 clientid: userid,
                 data: JSON.stringify(results)
             }
         ).done(function (data) {
+            console.log("test", data);
             fn();
         });
     });
