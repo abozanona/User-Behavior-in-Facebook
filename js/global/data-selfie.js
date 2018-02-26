@@ -174,7 +174,7 @@ var logic = {
                 card = h6link.attr("data-hovercard"),
                 type = self.getUserType(card),
                 id = card.match(/\d{5,}/g)[0];
-            postData.origPoster = {name: name, type: type, id: id};
+            postData.origPoster = {type: type, id: getHash(id)};
         }
         ;
 
