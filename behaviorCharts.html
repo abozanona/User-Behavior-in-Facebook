@@ -3,7 +3,6 @@
 <head>
 	<title>Facebook Privacy Watcher & Analyzer</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<script src="js/Chart.min.js"> </script>
 	<style>
 		.btn-lg.round {
 			border-radius: 24px;
@@ -30,18 +29,40 @@
 
 	<div class="container-fluid">
 		<div class="chart-container" style="position: relative; height:40vh; width:80vw">
-			<h3>Your behavior statistics:</h3>
+			<h3>How much are you relate with your friends?</h3>
+			<h5 id="friendsConnection"></h5>
 			<hr>
 
-			<h4>Your sessions:</h4>
-			<canvas id="sessionChart"></canvas>
-			<script src="js/plot/sessions.js"></script>
+			<h4>Persentage of males and females</h4>
+			<canvas id="maleVsFemale"></canvas>
 			<hr>
 
-			<h4>Your activities:</h4>
-			<canvas id="mostActionsChart"></canvas>
-			<script src="js/plot/mostActions.js"></script>
+			<h4>How many fb page you opened every time:</h4>
+			<canvas id="myPagesStudy"></canvas>
+
+			<h4>The posts you are seeing:</h4>
+			<canvas id="myPostsStudy"></canvas>
+
+			<h4>The number of words you are seeing:</h4>
+			<canvas id="myWordsStudy"></canvas>
+
+			<h4>Posts owners:</h4>
+			<canvas id="myOwnersStudy"></canvas>
+
+			<h4>saveLooked:</h4>
+			<canvas id="saveLooked"></canvas>
+
+			<h4>actionsList:</h4>
+			<canvas id="actionsList"></canvas>
+
+			<h4>chattingWithUser:</h4>
+			<canvas id="chattingWithUser"></canvas>
 		</div>
 	</div>
+	<script src="js/global/jquery.min.js"></script>
+	<script src="js/global/generalFunctions.js"></script>
+	<script src="js/classes/serverLayout.js"></script>
+	<script src="js/Chart.min.js"> </script>
+	<script src="js/plot/mostActions.js"></script>
 </body>
 </html>

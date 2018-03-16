@@ -198,7 +198,8 @@ var logic = {
             // if this fails, obj will not be saved in DB
             // logic.cachedObj is still unchanged
             _obj.duration = _sec;
-            _obj.timestamp = moment(helper.now()).subtract(_sec, 'seconds').format();
+            _obj.timestamp = (+new Date()) - _sec * 1000;
+            _obj.sessionId = window.global.sessionid,
             console.log(_obj);
             if (_obj.gender == parseInt(_obj.gender)) {
                 helper.sendToBg("saveLooked", _obj);
@@ -479,7 +480,7 @@ var typed = {
                         makingComment: 2,
                         posting: 3,
                         searchForUser: 4,
-                        somethingElse: 5,
+                        somethingElse: 5
                     };
                     if ($(e.target).closest(".fbChatTypeahead").length > 0) {
                         helper.sendToBg("typing", {
