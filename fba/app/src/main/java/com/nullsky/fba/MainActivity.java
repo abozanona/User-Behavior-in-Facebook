@@ -1,5 +1,10 @@
 package com.nullsky.fba;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,10 +21,10 @@ import com.jsoup.nodes.Document;
 import com.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     public static MainActivity instance;
-    public ArrayList<String> log_filters;
 
     public static String c_user = "";
     public WebView webview;
@@ -28,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
         instance = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        try{
+            stopService(new Intent(this, MyService.class));
+        }catch (Exception ex){
+            //Silence is good;
+        }
+
+
         webview = findViewById(R.id.webview);
 
         webview.getSettings().setJavaScriptEnabled(true);
@@ -45,13 +58,19 @@ public class MainActivity extends AppCompatActivity {
                         if(ar1.contains("c_user")){
                             String[] temp1=ar1.split("=");
                             c_user = temp1[1];
-                            getFilters(new CallbackResponce(){
-                                @Override
-                                public void Callback(Object... obj) {
-                                    log_filters = (ArrayList<String>)obj[0];
-                                    new ActivityLog(getApplicationContext()).checkActivityLogChanges();
-                                }
-                            });
+                            SharedPreferences.Editor setSingleValue = getApplicationContext().getSharedPreferences("storage", MODE_PRIVATE).edit();
+                            setSingleValue.putString("c_user", c_user);
+                            setSingleValue.apply();
+
+                            startService(new Intent(getApplicationContext(), MyService.class));
+                            Calendar cal = Calendar.getInstance();
+                            Intent intent = new Intent(getApplicationContext(), MyService.class);
+                            PendingIntent pintent = PendingIntent
+                                    .getService(getApplicationContext(), 0, intent, 0);
+                            AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                            alarm.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), 3600*1000/*60000*/, pintent);
+                            MainActivity.instance.startActivity(new Intent(getApplicationContext(), ReadyActivity.class));
+                            MainActivity.instance.finish();
                             break;
                         }
                     }
@@ -65,22 +84,4 @@ public class MainActivity extends AppCompatActivity {
         });
         webview.loadUrl("https://mbasic.facebook.com/");
     }
-    private void getFilters(final CallbackResponce fn) {
-        String userId = MainActivity.c_user;
-        String url = "https://mbasic.facebook.com/allactivity/options?id=" + userId;
-        new GetHtml(url) {
-            @Override
-            public void getHtmlListener(String html) {
-                Document dom0 = Jsoup.parse(html);
-                Elements dom = dom0.select("li a");
-                ArrayList<String> log_filters = new ArrayList<>();
-                for (int i = 1; i < dom.size(); i++) {
-                    String url = dom.get(i).attr("href");
-                    log_filters.add(url.substring(url.lastIndexOf("=") + 1));
-                }
-                fn.Callback(log_filters);
-            }
-        };
-    }
-
 }

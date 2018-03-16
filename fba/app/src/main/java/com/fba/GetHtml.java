@@ -1,13 +1,10 @@
 package com.fba;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import com.nullsky.fba.MainActivity;
 
