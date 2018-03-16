@@ -23,6 +23,7 @@ collectResult(function (results) {
     var numberOfMutualFriends = 0;
     var approximateMale = 0;
     var approximateFemale = 0;
+    var friendsHashArray = [];
     for(var i=0;i<friendsList.length; i++){
         numberOfMutualFriends += friendsList[i].mutual_friends;
         if(friendsList[i].gender == 1){
@@ -31,6 +32,7 @@ collectResult(function (results) {
         else if(friendsList[i].gender == 2){
             approximateFemale++;
         }
+        friendsHashArray[friendsList[i].id] = 1;
     }
     friendsConnection.innerText = parseInt(numberOfMutualFriends / friendsList.length) + '%';
 
@@ -66,6 +68,7 @@ collectResult(function (results) {
     var howManyPostWasLoadedShares = [];//postData
     var howManyPostWasLoadedLetters = [];//postData
     var howManyPostWasLoadedSponsored = [];//postData
+    var numberOfPostsByFriends = 0;//postData
     var numberOfPostsByUsers = 0;//postData
     var numberOfPostsByPages = 0;//postData
     var numberOfPostsByOthers = 0;//postData
@@ -89,10 +92,15 @@ collectResult(function (results) {
                 addNumber(howManyPostWasLoadedSponsored, getDaysNumber(action.back_time), 1);
             else
                 addNumber(howManyPostWasLoadedSponsored, getDaysNumber(action.back_time), 0);
+            console.log(action.data.posters);
             for(var j=0;j<action.data.posters.length;j++){
-                if(action.data.posters[j] == 'user')
-                    numberOfPostsByUsers++;
-                else if(action.data.posters[j] == 'page')
+                if(action.data.posters[j].type == 'user'){
+                    if(friendsHashArray[action.data.posters[j].id])
+                        numberOfPostsByFriends++;
+                    else
+                        numberOfPostsByUsers++;
+                }
+                else if(action.data.posters[j].type == 'page')
                     numberOfPostsByPages++;
                 else
                     numberOfPostsByOthers++;
@@ -180,11 +188,6 @@ collectResult(function (results) {
     });
 
 
-    /*
-
-    var saveLooked = [];
-    var actionsList = [];
-    var chattingWithUser = [];*/
 
     var myPostsStudy = document.getElementById("myPostsStudy");
     var labels = [];
@@ -304,6 +307,7 @@ collectResult(function (results) {
         data: {
             datasets: [{
                 data: [
+                    numberOfPostsByFriends,
                     numberOfPostsByUsers,
                     numberOfPostsByPages,
                     numberOfPostsByOthers
@@ -311,11 +315,14 @@ collectResult(function (results) {
                 backgroundColor: [
                     window.chartColors.orange,
                     window.chartColors.green,
+                    window.chartColors.blue,
+                    window.chartColors.purple,
                 ],
                 label: 'Who posts?'
             }],
             labels: [
-                'Users',
+                'Friends',
+                'Other users',
                 'Pages',
                 'Others'
             ]
@@ -339,7 +346,7 @@ collectResult(function (results) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'How many words you see every time',
+                label: 'Time spent on viewing posts',
                 backgroundColor: window.chartColors.red,
                 borderColor: window.chartColors.red,
                 data: data,
@@ -350,7 +357,7 @@ collectResult(function (results) {
             responsive: true,
             title: {
                 display: true,
-                text: 'The number of words you are seeing'
+                text: 'Time spent on viewing posts'
             },
             tooltips: {
                 mode: 'index',
@@ -372,7 +379,7 @@ collectResult(function (results) {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'number of words'
+                        labelString: 'Seconds'
                     }
                 }]
             }
@@ -393,7 +400,7 @@ collectResult(function (results) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'How many words you see every time',
+                label: 'How many action did you make threw days',
                 backgroundColor: window.chartColors.red,
                 borderColor: window.chartColors.red,
                 data: data,
@@ -404,7 +411,7 @@ collectResult(function (results) {
             responsive: true,
             title: {
                 display: true,
-                text: 'The number of words you are seeing'
+                text: 'How many action did you make threw days'
             },
             tooltips: {
                 mode: 'index',
@@ -426,7 +433,7 @@ collectResult(function (results) {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'number of words'
+                        labelString: 'Seconds'
                     }
                 }]
             }
@@ -447,7 +454,7 @@ collectResult(function (results) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'How many words you see every time',
+                label: 'How many time did you chat with users',
                 backgroundColor: window.chartColors.red,
                 borderColor: window.chartColors.red,
                 data: data,
@@ -458,7 +465,7 @@ collectResult(function (results) {
             responsive: true,
             title: {
                 display: true,
-                text: 'The number of words you are seeing'
+                text: 'How many time did you chat with users'
             },
             tooltips: {
                 mode: 'index',
@@ -480,7 +487,7 @@ collectResult(function (results) {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'number of words'
+                        labelString: 'number of ...'
                     }
                 }]
             }
