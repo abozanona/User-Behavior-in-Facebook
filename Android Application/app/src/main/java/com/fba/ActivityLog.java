@@ -15,10 +15,13 @@ import com.android.volley.toolbox.Volley;
 import com.jsoup.Jsoup;
 import com.jsoup.nodes.Document;
 import com.jsoup.select.Elements;
+import com.nullsky.fba.DBHelper;
 import com.nullsky.fba.MainActivity;
 
 import org.json.JSONArray;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -32,9 +35,11 @@ import static android.content.Context.MODE_PRIVATE;
 public class ActivityLog {
     private SharedPreferences.Editor setSingleValue;
     private SharedPreferences getSingleValue;
+    private Context context;
 
     @SuppressLint("CommitPrefEdits")
     public ActivityLog(Context context) {
+        this.context = context;
         setSingleValue = context.getSharedPreferences("storage", MODE_PRIVATE).edit();
         getSingleValue = context.getSharedPreferences("storage", MODE_PRIVATE);
     }
@@ -66,6 +71,8 @@ public class ActivityLog {
 
         String url = "https://mbasic.facebook.com/" + userId + "/allactivity?log_filter="
                 + log_filter;
+        url = "https://mbasic.facebook.com/" + userId + "/allactivity?log_filter="
+                + "cluster_11";
 
         Log.d("ActivityLog", url);
 
@@ -77,7 +84,14 @@ public class ActivityLog {
                 int day =Integer.parseInt((String) DateFormat.format("dd",   date));
                 int month =Integer.parseInt((String) DateFormat.format("MM",   date));
                 int year =Integer.parseInt(((String) DateFormat.format("yyyy",   date)).substring(2));
-                Elements tlUnit = dom0.select("#tlUnit_" + month + "_" + day + "_" + year);
+                String _day = day + "";
+                if(day<10)
+                    _day = "0" + _day;
+                String _month = month + "";
+                if(month<10)
+                    _month = "0" + _month;
+                String divId = "#tlUnit_" + _month + "_" + _day + "_" + year;
+                Elements tlUnit = dom0.select(divId);
                 if(tlUnit == null){
                     return;
                 }
@@ -101,7 +115,7 @@ public class ActivityLog {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    // response
+                                    new DBHelper(context).setJsonData(links.toString());
                                     Log.d("Response", response);
                                 }
                             },
@@ -154,7 +168,6 @@ public class ActivityLog {
     }
 
     private String replaceWithHash(String str) {
-        //todo hashing thing here
         boolean isDigitFound = false;
         StringBuilder result = new StringBuilder();
         StringBuilder number = new StringBuilder();
@@ -164,16 +177,33 @@ public class ActivityLog {
                 number.append(str.charAt(i));
             } else {
                 if (!number.toString().equals("")) {
-                    result.append("XXXXXXXX");
+                    result.append(sha256(number.toString()));
                     number = new StringBuilder();
                 }
                 result.append(str.charAt(i));
             }
         }
         if (number.length() != 0) {
-            result.append("XXXXXXXX");
+            result.append(sha256(number.toString()));
         }
         return (isDigitFound) ? result.toString() : "";
     }
+    private String sha256(String str){
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException e) {
+            return "XXXXXX";
+        }
+        md.update(str.getBytes());
 
+        byte byteData[] = md.digest();
+
+        //convert the byte to hex format method 1
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        return sb.toString();
+    }
 }

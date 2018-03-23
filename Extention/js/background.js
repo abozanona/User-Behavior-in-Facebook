@@ -69,7 +69,7 @@ function checkSendingData() {
         }
 
         var hoursDifference = timestampDifference(today, time).hours;
-        if (hoursDifference > /*20*/4) {
+        if (hoursDifference > 20) {
             getSingleValue("isAutoSave", function (isAutoSave) {
                 if (isAutoSave) {
                     collectResult(function (result) {

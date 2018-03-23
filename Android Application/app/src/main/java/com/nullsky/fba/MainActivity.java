@@ -1,5 +1,6 @@
 package com.nullsky.fba;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -13,26 +14,27 @@ import android.webkit.CookieSyncManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.fba.ActivityLog;
-import com.fba.CallbackResponce;
-import com.fba.GetHtml;
-import com.jsoup.Jsoup;
-import com.jsoup.nodes.Document;
-import com.jsoup.select.Elements;
-
-import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+    @SuppressLint("StaticFieldLeak")
     public static MainActivity instance;
 
     public static String c_user = "";
     public WebView webview;
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         instance = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences getSingleValue = getApplicationContext().getSharedPreferences("storage", MODE_PRIVATE);
+        String cUser = getSingleValue.getString("c_user", "");
+        if(!cUser.equals("")){
+            MainActivity.instance.startActivity(new Intent(getApplicationContext(), ReadyActivity.class));
+            MainActivity.instance.finish();
+        }
 
         try{
             stopService(new Intent(this, MyService.class));
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                             PendingIntent pintent = PendingIntent
                                     .getService(getApplicationContext(), 0, intent, 0);
                             AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                            alarm.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), 3600*1000/*60000*/, pintent);
+                            alarm.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), /*3600*1000*/60000, pintent);
                             MainActivity.instance.startActivity(new Intent(getApplicationContext(), ReadyActivity.class));
                             MainActivity.instance.finish();
                             break;

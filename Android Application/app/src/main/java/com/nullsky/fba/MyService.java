@@ -48,7 +48,7 @@ public class MyService extends Service {
                 new ActivityLog(getApplicationContext()).checkActivityLogChanges(log_filters);
             }
         });
-        Toast.makeText(this, "New data was collected about you.", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "New data was collected about you.", Toast.LENGTH_LONG).show();
     }
 
     @Override
