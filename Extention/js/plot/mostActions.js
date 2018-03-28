@@ -147,7 +147,7 @@ collectResult(function (results) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'How many fb page you opened every time',
+                label: 'How many Facebook page you opened every time',
                 backgroundColor: window.chartColors.red,
                 borderColor: window.chartColors.red,
                 data: data,
@@ -158,7 +158,7 @@ collectResult(function (results) {
             responsive: true,
             title: {
                 display: true,
-                text: 'How many fb page you opened every time'
+                text: 'How many Facebook page you opened every time'
             },
             tooltips: {
                 mode: 'index',
@@ -209,13 +209,13 @@ collectResult(function (results) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'How many fb posts was loaded into your screen',
+                label: 'How many Facebook posts was loaded into your screen',
                 backgroundColor: window.chartColors.red,
                 borderColor: window.chartColors.red,
                 data: dataPosts,
                 fill: false
             },{
-                label: 'How many fb sponsered posts was loaded into your screen',
+                label: 'How many Facebook sponsered posts was loaded into your screen',
                 backgroundColor: window.chartColors.grey,
                 borderColor: window.chartColors.red,
                 data: dataSponsored,
