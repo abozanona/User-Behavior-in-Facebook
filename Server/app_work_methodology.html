@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Facebook Privacy Watcher & Analyzer - Android application principle</title>
+    <link rel="shortcut icon" href="static/img/logo_icon.ico" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/my-style.css">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar-light">
+
+    <section id="android-section">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 id="downloaintro-part" class="display-4">How Android application works?</h1>
+          <p class="lead">Our Android application works as follows: </p> 
+          <div class="row">
+            <div class="col-sm">
+              <hr class="my-4">
+                <p>
+                  The application launches a web view to load Facebook page in it, Facebook links are the only links to be loaded into that web view.
+                </p>
+                <p>
+                  Two Facebook pages are to be loaded into that web view, first page is the login page, this page appears when the user first start the application,
+                  to ask him to log into his Facebook account, after log in a new cookie will be stored into the web view called C-User,
+                  this cookie is used to know if the user is logged in or not, if the user is logged in, the app move him to another page,
+                  which has the history of what we collected about him.
+                </p>
+                <p>
+                  User_id can be found in the C-User cookie as well; this id is to be stored in the storage of the application.
+                  The application opens the activity log of the Facebook user account, the activity log consists of group of filters,
+                  for example there is filters for friends, likes, pages, and many other.
+                </p>
+                <p>
+                  Some filters may exist in one Facebook account and not appear in another one, examples of these filters include filters
+                  of the apps used by Facebook user, such that each app has its own filter. Data is collected from these filters every day;
+                  such that every half-hour data of one filter is to be collected by opening the link of that filter associated with User_id.
+                </p>
+                <p>
+                  The collected data is then stored into a local database to be sent later to the server.
+                  The time of the action and the content in which the action happened to are stored also, for example,
+                  if the user liked something, the time of the like is stored, and the content that has been liked is also stored
+                  along with hash value of the user id. The application collects the actions that happened three days earlier,
+                  which means that the collected data of one day was generated three days before.
+                </p>
+                <p>
+                  The privacy of the collected data is preserved by hashing any number appears and removing any user name
+                  and any values that maybe leads to your identity on Facebook.
+                </p>
+            </div>
+          </div>
+          <hr>
+          <p class="lead">To download the Android application from<strong> Google Play store </strong> <img src="static/img/android-playstore.png" alt="play store icon" height="18" width="18"> </p>        
+          <p class="lead"><a class="btn btn-secondary btn-lg" target="_blank" href="https://play.google.com/store/apps/details?id=com.nullsky.fba" role="button">Download</a></p>            
+        </div>
+      </div>
+    </section>
+
+      <div class="card-footer"><small class="text-muted">Copyright &copy; 2018 by Research team.</small>
+      </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
