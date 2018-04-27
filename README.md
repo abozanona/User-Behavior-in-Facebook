@@ -27,5 +27,5 @@ FPWA (Facebook Privacy Watcher and Analyzer) is a browser extension (i.e. plug-i
 *Dr. Thomas Paul - thomas@thomas-paul.de 
 
 
-## For more details, visit our website:
+## For more details, visit our website (Results will be added to the website):
 https://fba.ppu.edu/
