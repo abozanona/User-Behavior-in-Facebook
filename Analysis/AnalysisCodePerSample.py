@@ -1,3 +1,6 @@
+## This is the Analysis code for the FPWA project.
+# Done by: Meqdad Darweesh
+
 #   Importing Statements for Libraries
 import pandas as pd
 import numpy as np
@@ -9,7 +12,7 @@ import matplotlib as plt
 
 # Reading the data samples
 
-with open("/home/meqdad/Desktop/DataAnalysis/sample4.json") as datafile:
+with open("......Write the path...dataSample.json") as datafile:
     data = json.load(datafile)
 
 
