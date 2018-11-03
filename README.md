@@ -11,20 +11,20 @@ FPWA (Facebook Privacy Watcher and Analyzer) is a browser extension (i.e. plug-i
  
 ### Development team:
 
-*Abdulhamead Abuzanunah - abozanona@gmail.com
+ * Abdulhamead Abuzanunah - abozanona@gmail.com
 
-*Meqdad darweesh - meqdad.darweesh@gmail.com
+ * Meqdad darweesh - meqdad.darweesh@gmail.com
 
-*Hamzah Bahar - hamzah.bahar@outlook.com
+ * Hamzah Bahar - hamzah.bahar@outlook.com
 
 
 ### For press and research - related questions:
 
-*Prof. Dr. Thorsten Sturfe - thorsten.strufe@tu-dresden.de
+ * Prof. Dr. Thorsten Sturfe - thorsten.strufe@tu-dresden.de
 
-*Dr. Hani Salah - hani@ppu.edu 
+ * Dr. Hani Salah - hani@ppu.edu 
 
-*Dr. Thomas Paul - thomas@thomas-paul.de 
+ * Dr. Thomas Paul - thomas@thomas-paul.de 
 
 
 ## For more details, visit our website (Results will be added to the website):
